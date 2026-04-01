@@ -508,5 +508,38 @@
         }
       });
     </script>
+    <script src="https://jsdelivr.net"></script>
+
+    <script>
+      // 1. Configura tus credenciales aquí
+      const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co";
+      const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
+      const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+      const form = document.getElementById("supabaseContactForm");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById("btnEnviar");
+        btn.innerText = "Enviando...";
+
+        const { error } = await supabase.from("contactos").insert([
+          {
+            nombre: document.getElementById("nombre").value,
+            email: document.getElementById("email").value,
+            mensaje: document.getElementById("mensaje").value,
+          },
+        ]);
+
+        if (error) {
+          alert("Error al enviar: " + error.message);
+        } else {
+          alert("¡Mensaje guardado con éxito! Nos contactaremos pronto.");
+          form.reset();
+        }
+        btn.innerText = "ENVIAR A RT CONSULTORES";
+      });
+    </script>
   </body>
 </html>
