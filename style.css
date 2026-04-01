@@ -1,0 +1,510 @@
+/* =========================================
+   1. CONFIGURACIÓN TIPOGRÁFICA UNIFORME
+   ========================================= */
+:root {
+  /* Mantengo tus variables intactas */
+  --verde-rt-imagen: #d9e3e2;
+  --verde-rt-oscuro: #1e3a3a;
+  --verde-rt-base: #aab7b6;
+  --verde-rt-texto: #264a4a;
+  --gris-dark: #566573;
+  --gris-light: #d5d8dc;
+  --blanco: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+/* Aplicación global de la fuente Segoe UI para uniformidad total */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+body {
+  line-height: 1.4;
+  color: #333;
+  overflow-x: hidden;
+  background-color: var(--blanco);
+  -webkit-font-smoothing: antialiased; /* Mejora la nitidez de la letra */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegura que los títulos y botones también hereden la misma fuente */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+input,
+textarea,
+button,
+li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+  --verde-rt-imagen: #d9e3e2;
+  --verde-rt-oscuro: #1e3a3a;
+  --verde-rt-base: #aab7b6;
+  --verde-rt-texto: #264a4a;
+  --gris-dark: #566573;
+  --gris-light: #d5d8dc;
+  --blanco: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4; /* Compacto */
+  color: #333;
+  overflow-x: hidden;
+  background-color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVEGACIÓN EXACTA: Evita que el navbar tape el título al hacer clic */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (NAVBAR)
+   ========================================= */
+.navbar-top {
+  height: 70px;
+  background: var(--verde-rt-oscuro);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-text {
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main {
+  color: var(--blanco);
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.brand-sub {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 600;
+  margin-left: 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--verde-rt-base);
+}
+
+/* =========================================
+   3. SECCIÓN INICIO (HERO)
+   ========================================= */
+.main-content {
+  margin-top: 70px;
+  flex: 1;
+}
+
+.hero-section {
+  height: calc(100vh - 70px); /* Ajustado a pantalla */
+  min-height: 400px;
+  display: flex;
+  background-color: var(--blanco);
+}
+
+.hero-left {
+  flex: 1.2;
+  background: linear-gradient(
+    135deg,
+    var(--verde-rt-imagen) 0%,
+    var(--verde-rt-base) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 40px 60px;
+  color: var(--verde-rt-texto);
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-line {
+  width: 80px;
+  height: 4px;
+  background-color: var(--verde-rt-texto);
+  margin: 20px 0;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.hero-logo {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* =========================================
+   4. ESTILOS COMPACTOS DE SECCIÓN (SIN AIRE)
+   ========================================= */
+.about-section,
+.services-section,
+.contact-section {
+  padding: 20px 5% !important; /* Compactación total */
+}
+
+.about-section {
+  background-color: #f9f9f9;
+}
+.services-section {
+  background: var(--verde-rt-imagen);
+}
+.contact-section {
+  background: var(--blanco);
+}
+
+/* Títulos homologados (Header del diseño de servicios) */
+.about-header,
+.services-section .container > div:first-child,
+.contact-section .container > div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px !important;
+}
+
+/* =========================================
+   5. NOSOTROS (ABOUT) - ESTILO CONSOLIDADO
+   ========================================= */
+.about-section {
+  padding: 20px 5% !important;
+  background-color: #f9f9f9;
+}
+
+.about-intro {
+  /* Tamaño aumentado para mayor legibilidad */
+  font-size: 1.25rem !important;
+  line-height: 1.6;
+  color: #444;
+
+  /* Alineación y ancho */
+  text-align: justify;
+  max-width: 95% !important;
+  margin: 0 auto 15px !important;
+}
+
+/* Mantiene el diseño de las cajas de Misión/Visión compacto */
+.differentiation-box {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border-left: 5px solid var(--verde-rt-texto);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin: 10px auto;
+  max-width: 1100px;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* =========================================
+   6. SERVICIOS (CENTRADO Y UNIFORME)
+   ========================================= */
+.grid-services {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 4 en una fila */
+  gap: 15px !important;
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 45 auto !important;
+}
+
+.service-card {
+  position: relative;
+  height: 180px !important; /* Altura compacta */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .card-bg {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 58, 58, 0.9),
+    rgba(38, 74, 74, 0.3)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+/* =========================================
+   5. SECCIÓN SERVICIOS (DISEÑO 2x2 LARGO)
+   ========================================= */
+.services-section {
+  padding: 20px 5% !important;
+  background: var(--verde-rt-imagen);
+}
+
+/* Título homologado con Nosotros */
+.section-header-rt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px !important;
+}
+
+/* Cuadrícula de 2 columnas para que se vean largos */
+.grid-services {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 arriba y 2 abajo */
+  gap: 20px !important;
+  max-width: 1100px; /* Misma medida que Nosotros para simetría */
+  margin: 0 auto !important;
+}
+
+.service-card {
+  position: relative;
+  height: 180px !important; /* Altura compacta */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .card-bg {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 58, 58, 0.9),
+    rgba(38, 74, 74, 0.3)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Títulos de servicios uniformes */
+.service-card h3 {
+  font-size: 1.2rem; /* Un poco más grande al ser cuadros más largos */
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* =========================================
+   7. MODAL (VENTANA EMERGENTE FLEXIBLE)
+   ========================================= */
+.details-overlay {
+  display: none; /* Se activa con JS */
+  position: fixed;
+  inset: 0; /* Cubre toda la pantalla */
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Margen de seguridad para móviles */
+  backdrop-filter: blur(3px); /* Efecto elegante de fondo */
+}
+
+.details-content {
+  background: white;
+  width: 100%;
+  max-width: 700px; /* Ancho máximo en computadoras */
+  max-height: 90vh; /* No sobrepasa el 90% del alto de la pantalla */
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  overflow-y: auto; /* Permite scroll interno si el texto es muy largo */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close-details {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: var(--verde-rt-texto);
+  line-height: 1;
+}
+
+/* Estilo para la lista dentro del modal para que sea legible */
+#modalList {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#modalList li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  text-align: justify;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+#modalList li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--verde-rt-texto);
+  font-weight: bold;
+}
+
+/* =========================================
+   8. CONTACTO, WHATSAPP Y FOOTER
+   ========================================= */
+.quick-actions {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 1500;
+}
+
+/* Eliminar el círculo del teléfono */
+.quick-actions .phone,
+.quick-actions a:not(.wa) {
+  display: none !important;
+}
+
+.action-btn.wa {
+  background: #25d366 !important;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.site-footer {
+  background: var(--verde-rt-oscuro);
+  color: white;
+  padding: 8px 0; /* Barra delgada */
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
