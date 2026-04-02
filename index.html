@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RT Consultores Fiscales y Gubernamentales</title>
-    <link rel="icon" type="image/png" href="https://supabase.co" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://onckgyxtttcbddezmnsj.supabase.co/storage/v1/object/public/LOGO/Logotipo%20sin%20fondo.png"
+    />
     <link rel="stylesheet" href="style.css" />
-    <!-- Corrección de enlace a Iconos -->
+    <!-- Iconos para dirección y teléfono -->
     <link rel="stylesheet" href="https://cloudflare.com" />
   </head>
-
   <body>
     <header class="navbar-top">
       <div class="nav-container">
@@ -39,7 +42,11 @@
           </div>
         </div>
         <div class="hero-right">
-          <img src="https://supabase.co" alt="Logotipo RT" class="hero-logo" />
+          <img
+            src="https://onckgyxtttcbddezmnsj.supabase.co/storage/v1/object/public/LOGO/Logotipo%20sin%20fondo.png"
+            alt="Logotipo RT"
+            class="hero-logo"
+          />
         </div>
       </section>
 
@@ -112,38 +119,57 @@
             class="mission-vision-grid"
             style="margin-top: 10px; display: grid; gap: 20px"
           >
+            <!-- MISIÓN -->
             <div
               class="differentiation-box"
               style="
-                padding: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: none;
                 border-right: 5px solid var(--verde-rt-texto);
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 20px;
                 text-align: justify;
               "
             >
-              <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Misión</h3>
-              <p>
-                Brindar soluciones integrales en consultoría fiscal,
-                gubernamental y administrativa, fusionando experiencia técnica
-                con innovación digital para garantizar la transparencia, el
-                cumplimiento legal y la rentabilidad de nuestros clientes
-                mediante procesos estandarizados de excelencia.
-              </p>
+              <div class="diff-text">
+                <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Misión</h3>
+                <p style="margin: 5px 0 0 0">
+                  Brindar soluciones integrales en consultoría fiscal,
+                  gubernamental y administrativa, fusionando experiencia técnica
+                  con innovación digital para garantizar la transparencia, el
+                  cumplimiento legal y la rentabilidad de nuestros clientes
+                  mediante procesos estandarizados de excelencia.
+                </p>
+              </div>
             </div>
+
+            <!-- VISIÓN -->
             <div
               class="differentiation-box"
               style="
-                padding: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: none;
                 border-right: 5px solid var(--verde-rt-texto);
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 20px;
                 text-align: justify;
               "
             >
-              <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Visión</h3>
-              <p>
-                Consolidarnos como el referente de innovación en servicios
-                contables y gubernamentales, donde la tecnología y el talento
-                humano se unen para ofrecer una experiencia de tranquilidad,
-                confidencialidad y crecimiento estratégico constante.
-              </p>
+              <div class="diff-text">
+                <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Visión</h3>
+                <p style="margin: 5px 0 0 0">
+                  Consolidarnos como el referente de innovación en servicios
+                  contables y gubernamentales, donde la tecnología y el talento
+                  humano se unen para ofrecer una experiencia de tranquilidad,
+                  confidencialidad y crecimiento estratégico constante.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -197,11 +223,16 @@
           </div>
 
           <div class="grid-services">
+            <!-- Altura reducida mediante el atributo style -->
             <div
               class="service-card"
               onclick="openDetails('digital')"
-              style="height: 180px; cursor: pointer"
+              style="height: 180px"
             >
+              <div
+                class="card-bg"
+                style="background-image: url(&quot;https://unsplash.com&quot;)"
+              ></div>
               <div class="card-overlay">
                 <h3>Automatización y transformación digital</h3>
               </div>
@@ -209,8 +240,12 @@
             <div
               class="service-card"
               onclick="openDetails('gob')"
-              style="height: 180px; cursor: pointer"
+              style="height: 180px"
             >
+              <div
+                class="card-bg"
+                style="background-image: url(&quot;https://unsplash.com&quot;)"
+              ></div>
               <div class="card-overlay">
                 <h3>Asesoría y consultoría gubernamental</h3>
               </div>
@@ -218,22 +253,30 @@
             <div
               class="service-card"
               onclick="openDetails('cont')"
-              style="height: 180px; cursor: pointer"
+              style="height: 180px"
             >
+              <div
+                class="card-bg"
+                style="background-image: url(&quot;https://unsplash.com&quot;)"
+              ></div>
               <div class="card-overlay"><h3>Contabilidad y auditoría</h3></div>
             </div>
             <div
               class="service-card"
               onclick="openDetails('cursos')"
-              style="height: 180px; cursor: pointer"
+              style="height: 180px"
             >
+              <div
+                class="card-bg"
+                style="background-image: url(&quot;https://unsplash.com&quot;)"
+              ></div>
               <div class="card-overlay"><h3>Cursos y capacitaciones</h3></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECCIÓN CONTACTO -->
+      <!-- SECCIÓN CONTACTO INTEGRADA -->
       <section
         id="contacto"
         class="contact-section"
@@ -249,6 +292,7 @@
             margin: 0 auto;
           "
         >
+          <!-- LADO IZQUIERDO: FORMULARIO E INFO -->
           <div class="form-side">
             <h2
               style="
@@ -259,21 +303,23 @@
             >
               Contactar a un experto
             </h2>
+
+            <!-- INFO DE CONTACTO EXTRAÍDA DE TU CÓDIGO -->
             <div style="margin-bottom: 25px; line-height: 1.6; color: #333">
-              <p>
+              <p style="margin-bottom: 10px">
                 <i
                   class="fas fa-map-marker-alt"
                   style="color: var(--verde-rt-texto); margin-right: 10px"
-                ></i
-                ><strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
+                ></i>
+                <strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
                 Aldama, Centro, 74400 Izúcar de Matamoros, Pue.
               </p>
               <p>
                 <i
-                  class="fab fa-whatsapp"
+                  class="fas fa-phone"
                   style="color: #2ecc71; margin-right: 10px"
-                ></i
-                ><strong>WhatsApp:</strong>
+                ></i>
+                <strong>WhatsApp:</strong>
                 <a
                   href="https://wa.me"
                   target="_blank"
@@ -283,12 +329,12 @@
               </p>
             </div>
 
-            <!-- ID corregido para que coincida con el Script -->
             <form
               id="supabaseContactForm"
+              class="custom-form"
               style="display: flex; flex-direction: column; gap: 15px"
             >
-              <div style="display: flex; gap: 15px">
+              <div class="form-row" style="display: flex; gap: 15px">
                 <input
                   type="text"
                   id="nombre"
@@ -329,6 +375,7 @@
               <button
                 type="submit"
                 id="btnEnviar"
+                class="btn-send"
                 style="
                   background: var(--verde-rt-texto);
                   color: white;
@@ -344,6 +391,7 @@
             </form>
           </div>
 
+          <!-- LADO DERECHO: MAPA INTERACTIVO REAL -->
           <div class="map-side">
             <div
               class="map-box"
@@ -356,20 +404,22 @@
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
               "
             >
+              <!-- MAPA REAL DE GOOGLE MAPS PARA RT CONSULTORES EN IZÚCAR -->
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3099872028915!2d-98.46829702627714!3d18.605121966588985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d643b9d61da5eb7%3A0x1e034aa70c7d232!2sRT%20Consultores%20Fiscales%20y%20Gubernamentales!5e0!3m2!1ses-419!2smx!4v1774999587967!5m2!1ses-419!2smx"
-                width="100%"
+                width="600"
                 height="400"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
         </div>
       </section>
 
-      <footer class="site-footer" style="text-align: center; padding: 20px">
+      <footer class="site-footer">
         <p>
           &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los
           derechos reservados.
@@ -377,62 +427,19 @@
       </footer>
     </main>
 
-    <!-- MODAL ÚNICO -->
-    <div
-      id="detailsOverlay"
-      class="details-overlay"
-      style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <div
-        class="details-content"
-        style="
-          background: white;
-          padding: 30px;
-          border-radius: 10px;
-          max-width: 700px;
-          width: 90%;
-          position: relative;
-          max-height: 85vh;
-          overflow-y: auto;
-        "
-      >
-        <span
-          onclick="closeDetails()"
-          style="
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 35px;
-            cursor: pointer;
-            color: #333;
-          "
-          >&times;</span
-        >
-        <h2
-          id="modalTitle"
-          style="color: var(--verde-rt-texto); margin-bottom: 20px"
-        ></h2>
-        <ul
-          id="modalList"
-          style="text-align: left; line-height: 1.6; padding-left: 20px"
-        ></ul>
+    <div id="detailsOverlay" class="details-overlay">
+      <div class="details-content">
+        <span class="close-details" onclick="closeDetails()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <ul id="modalList"></ul>
       </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- SDK oficial de Supabase (Librería corregida) -->
     <script src="https://jsdelivr.net"></script>
+
     <script>
+      // 1. LÓGICA DE LAS VENTANAS DE SERVICIOS (MODALES)
       const serviceData = {
         digital: {
           title: "Automatización y transformación digital",
@@ -485,25 +492,30 @@
       function openDetails(key) {
         const data = serviceData[key];
         if (!data) return;
+
         document.getElementById("modalTitle").innerText = data.title;
-        document.getElementById("modalList").innerHTML = data.items
-          .map((item) => `<li>${item}</li>`)
-          .join("");
-        document.getElementById("detailsOverlay").style.display = "flex";
+        const list = document.getElementById("modalList");
+        list.innerHTML = data.items.map((item) => `<li>${item}</li>`).join("");
+
+        const overlay = document.getElementById("detailsOverlay");
+        overlay.style.display = "flex";
         document.body.style.overflow = "hidden";
       }
 
       function closeDetails() {
-        document.getElementById("detailsOverlay").style.display = "none";
+        const overlay = document.getElementById("detailsOverlay");
+        overlay.style.display = "none";
         document.body.style.overflow = "auto";
       }
 
-      window.onclick = function (event) {
+      window.addEventListener("click", function (event) {
         const overlay = document.getElementById("detailsOverlay");
-        if (event.target === overlay) closeDetails();
-      };
+        if (event.target === overlay) {
+          closeDetails();
+        }
+      });
 
-      // SUPABASE LOGIC
+      // 2. LÓGICA DE ENVÍO A SUPABASE (URL de proyecto corregida)
       const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co";
       const supabaseKey =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
@@ -514,7 +526,8 @@
       contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const btn = document.getElementById("btnEnviar");
-        btn.innerText = "Enviando...";
+
+        if (btn) btn.innerText = "Enviando...";
 
         const { error } = await supabaseClient.from("contactos").insert([
           {
@@ -530,7 +543,8 @@
           alert("¡Mensaje guardado con éxito! Nos contactaremos pronto.");
           contactForm.reset();
         }
-        btn.innerText = "ENVIAR MENSAJE";
+
+        if (btn) btn.innerText = "ENVIAR MENSAJE";
       });
     </script>
   </body>
