@@ -334,7 +334,7 @@
               class="custom-form"
               style="display: flex; flex-direction: column; gap: 15px"
             >
-              <div class="form-row" style="display: flex; gap: 15px">
+              <div class="form-row" style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <input
                   type="text"
                   id="nombre"
@@ -392,18 +392,8 @@
           </div>
 
           <!-- LADO DERECHO: MAPA INTERACTIVO REAL -->
-          <div class="map-side">
-            <div
-              class="map-box"
-              style="
-                height: 100%;
-                min-height: 350px;
-                border-radius: 10px;
-                overflow: hidden;
-                border: 1px solid #ddd;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-              "
-            >
+          <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+
               <!-- MAPA REAL DE GOOGLE MAPS PARA RT CONSULTORES EN IZÚCAR -->
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3099872028915!2d-98.46829702627714!3d18.605121966588985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d643b9d61da5eb7%3A0x1e034aa70c7d232!2sRT%20Consultores%20Fiscales%20y%20Gubernamentales!5e0!3m2!1ses-419!2smx!4v1774999587967!5m2!1ses-419!2smx"
