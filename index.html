@@ -174,256 +174,77 @@
           </div>
         </div>
       </section>
+<!-- SECCIÓN SERVICIOS (Sin cambios, está correcta) -->
+<section id="servicios" class="services-section">
+  <div class="container">
+    <div style="text-align: center; display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+      <hr style="flex-grow: 1; border: none; border-top: 3px solid var(--verde-rt-texto); max-width: 80px; margin-right: 20px; opacity: 0.3;" />
+      <h2 style="font-size: 2.5rem; font-weight: 800; text-transform: uppercase; color: var(--verde-rt-texto); margin: 0; letter-spacing: 10px;">
+        Nuestros <span style="color: var(--verde-rt-oscuro)">Servicios</span>
+      </h2>
+      <hr style="flex-grow: 1; border: none; border-top: 3px solid var(--verde-rt-texto); max-width: 80px; margin-left: 20px; opacity: 0.3;" />
+    </div>
 
-      <!-- SECCIÓN SERVICIOS -->
-      <section id="servicios" class="services-section">
-        <div class="container">
-          <div
-            style="
-              text-align: center;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin-bottom: 10px;
-            "
-          >
-            <hr
-              style="
-                flex-grow: 1;
-                border: none;
-                border-top: 3px solid var(--verde-rt-texto);
-                max-width: 80px;
-                margin-right: 20px;
-                opacity: 0.3;
-              "
-            />
-            <h2
-              style="
-                font-size: 2.5rem;
-                font-weight: 800;
-                text-transform: uppercase;
-                color: var(--verde-rt-texto);
-                margin: 0;
-                letter-spacing: 10px;
-              "
-            >
-              Nuestros
-              <span style="color: var(--verde-rt-oscuro)">Servicios</span>
-            </h2>
-            <hr
-              style="
-                flex-grow: 1;
-                border: none;
-                border-top: 3px solid var(--verde-rt-texto);
-                max-width: 80px;
-                margin-left: 20px;
-                opacity: 0.3;
-              "
-            />
-          </div>
-
-          <div class="grid-services">
-            <!-- Altura reducida mediante el atributo style -->
-            <div
-              class="service-card"
-              onclick="openDetails('digital')"
-              style="height: 180px"
-            >
-              <div
-                class="card-bg"
-                style="background-image: url(&quot;https://unsplash.com&quot;)"
-              ></div>
-              <div class="card-overlay">
-                <h3>Automatización y transformación digital</h3>
-              </div>
-            </div>
-            <div
-              class="service-card"
-              onclick="openDetails('gob')"
-              style="height: 180px"
-            >
-              <div
-                class="card-bg"
-                style="background-image: url(&quot;https://unsplash.com&quot;)"
-              ></div>
-              <div class="card-overlay">
-                <h3>Asesoría y consultoría gubernamental</h3>
-              </div>
-            </div>
-            <div
-              class="service-card"
-              onclick="openDetails('cont')"
-              style="height: 180px"
-            >
-              <div
-                class="card-bg"
-                style="background-image: url(&quot;https://unsplash.com&quot;)"
-              ></div>
-              <div class="card-overlay"><h3>Contabilidad y auditoría</h3></div>
-            </div>
-            <div
-              class="service-card"
-              onclick="openDetails('cursos')"
-              style="height: 180px"
-            >
-              <div
-                class="card-bg"
-                style="background-image: url(&quot;https://unsplash.com&quot;)"
-              ></div>
-              <div class="card-overlay"><h3>Cursos y capacitaciones</h3></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECCIÓN CONTACTO INTEGRADA -->
-      <section
-        id="contacto"
-        class="contact-section"
-        style="padding: 60px 10%; background: #ffffff"
-      >
-        <div
-          class="contact-grid"
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-          "
-        >
-          <!-- LADO IZQUIERDO: FORMULARIO E INFO -->
-          <div class="form-side">
-            <h2
-              style="
-                color: var(--verde-rt-texto);
-                margin-bottom: 20px;
-                font-size: 2rem;
-              "
-            >
-              Contactar a un experto
-            </h2>
-
-            <!-- INFO DE CONTACTO EXTRAÍDA DE TU CÓDIGO -->
-            <div style="margin-bottom: 25px; line-height: 1.6; color: #333">
-              <p style="margin-bottom: 10px">
-                <i
-                  class="fas fa-map-marker-alt"
-                  style="color: var(--verde-rt-texto); margin-right: 10px"
-                ></i>
-                <strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
-                Aldama, Centro, 74400 Izúcar de Matamoros, Pue.
-              </p>
-              <p>
-                <i
-                  class="fas fa-phone"
-                  style="color: #2ecc71; margin-right: 10px"
-                ></i>
-                <strong>WhatsApp:</strong>
-                <a
-                  href="https://wa.me"
-                  target="_blank"
-                  style="text-decoration: none; color: inherit"
-                  >(24) 31 13 12 60</a
-                >
-              </p>
-            </div>
-
-            <form
-              id="supabaseContactForm"
-              class="custom-form"
-              style="display: flex; flex-direction: column; gap: 15px"
-            >
-              <div class="form-row" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <input
-                  type="text"
-                  id="nombre"
-                  placeholder="Tu nombre"
-                  style="
-                    width: 100%;
-                    padding: 12px;
-                    border: 1px solid #ddd;
-                    border-radius: 5px;
-                  "
-                  required
-                />
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Correo electrónico"
-                  style="
-                    width: 100%;
-                    padding: 12px;
-                    border: 1px solid #ddd;
-                    border-radius: 5px;
-                  "
-                  required
-                />
-              </div>
-              <textarea
-                id="mensaje"
-                placeholder="¿En qué podemos ayudarte?"
-                rows="4"
-                style="
-                  width: 100%;
-                  padding: 12px;
-                  border: 1px solid #ddd;
-                  border-radius: 5px;
-                "
-                required
-              ></textarea>
-              <button
-                type="submit"
-                id="btnEnviar"
-                class="btn-send"
-                style="
-                  background: var(--verde-rt-texto);
-                  color: white;
-                  border: none;
-                  padding: 15px;
-                  cursor: pointer;
-                  border-radius: 5px;
-                  font-weight: bold;
-                "
-              >
-                ENVIAR MENSAJE
-              </button>
-            </form>
-          </div>
-
-          <!-- LADO DERECHO: MAPA INTERACTIVO REAL -->
-          <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
-
-              <!-- MAPA REAL DE GOOGLE MAPS PARA RT CONSULTORES EN IZÚCAR -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3099872028915!2d-98.46829702627714!3d18.605121966588985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d643b9d61da5eb7%3A0x1e034aa70c7d232!2sRT%20Consultores%20Fiscales%20y%20Gubernamentales!5e0!3m2!1ses-419!2smx!4v1774999587967!5m2!1ses-419!2smx"
-                width="600"
-                height="400"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="site-footer">
-        <p>
-          &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los
-          derechos reservados.
-        </p>
-      </footer>
-    </main>
-
-    <div id="detailsOverlay" class="details-overlay">
-      <div class="details-content">
-        <span class="close-details" onclick="closeDetails()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <ul id="modalList"></ul>
+    <div class="grid-services">
+      <div class="service-card" onclick="openDetails('digital')" style="height: 180px; cursor: pointer;">
+        <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
+        <div class="card-overlay"><h3>Automatización y transformación digital</h3></div>
+      </div>
+      <div class="service-card" onclick="openDetails('gob')" style="height: 180px; cursor: pointer;">
+        <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
+        <div class="card-overlay"><h3>Asesoría y consultoría gubernamental</h3></div>
+      </div>
+      <div class="service-card" onclick="openDetails('cont')" style="height: 180px; cursor: pointer;">
+        <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
+        <div class="card-overlay"><h3>Contabilidad y auditoría</h3></div>
+      </div>
+      <div class="service-card" onclick="openDetails('cursos')" style="height: 180px; cursor: pointer;">
+        <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
+        <div class="card-overlay"><h3>Cursos y capacitaciones</h3></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SECCIÓN CONTACTO CORREGIDA -->
+<section id="contacto" class="contact-section" style="padding: 80px 10%; background: #ffffff; min-height: 500px;">
+  <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+    
+    <!-- LADO IZQUIERDO: FORMULARIO -->
+    <div class="form-side">
+      <h2 style="color: var(--verde-rt-texto); margin-bottom: 20px; font-size: 2rem;">Contactar a un experto</h2>
+      <div style="margin-bottom: 25px; line-height: 1.6; color: #333">
+        <p><i class="fas fa-map-marker-alt" style="color: var(--verde-rt-texto); margin-right: 10px"></i><strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas Aldama, Centro, 74400 Izúcar de Matamoros, Pue.</p>
+        <p><i class="fab fa-whatsapp" style="color: #2ecc71; margin-right: 10px"></i><strong>WhatsApp:</strong> 
+           <a href="https://wa.me" target="_blank" style="text-decoration: none; color: inherit">(24) 31 13 12 60</a>
+        </p>
+      </div>
+
+      <form id="supabaseContactForm" style="display: flex; flex-direction: column; gap: 15px">
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <input type="text" id="nombre" placeholder="Tu nombre" style="flex: 1; min-width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required />
+          <input type="email" id="email" placeholder="Correo electrónico" style="flex: 1; min-width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required />
+        </div>
+        <textarea id="mensaje" placeholder="¿En qué podemos ayudarte?" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; resize: vertical;" required></textarea>
+        <button type="submit" id="btnEnviar" style="background: var(--verde-rt-texto); color: white; border: none; padding: 15px; cursor: pointer; border-radius: 5px; font-weight: bold; width: 100%;">ENVIAR MENSAJE</button>
+      </form>
+    </div>
+
+    <!-- LADO DERECHO: MAPA -->
+    <div class="map-side" style="width: 100%;">
+      <div class="map-box" style="width: 100%; height: 450px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3099872028915!2d-98.46829702627714!3d18.605121966588985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d643b9d61da5eb7%3A0x1e034aa70c7d232!2sRT%20Consultores%20Fiscales%20y%20Gubernamentales!5e0!3m2!1ses-419!2smx!4v1774999587967!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div> <!-- AQUÍ CERRAMOS EL contact-grid -->
+</section> <!-- AQUÍ CERRAMOS LA SECCIÓN contacto -->
+
+<!-- FOOTER FUERA DE LAS SECCIONES -->
+<footer class="site-footer" style="background: var(--verde-rt-oscuro, #1a3c34); color: white; text-align: center; padding: 10px 0; width: 100%; clear: both; display: flex; align-items: center; justify-content: center; min-height: 40px;">
+  <p style="margin: 0; font-size: 0.8rem; letter-spacing: 1px; font-weight: 500;">
+    &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los derechos reservados.
+  </p>
+</footer>
 
     <!-- SDK oficial de Supabase (Librería corregida) -->
     <script src="https://jsdelivr.net"></script>
