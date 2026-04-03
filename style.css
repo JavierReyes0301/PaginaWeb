@@ -152,6 +152,52 @@ section {
 .nav-links a:hover {
   color: var(--verde-rt-base);
 }
+/* Estilos base del botón (oculto en desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--verde-rt-texto);
+  transition: 0.3s;
+}
+
+/* Tablet y Celular */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Mostrar botón */
+  }
+
+  .nav-links {
+    display: none; /* Ocultar menú normal */
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Ajusta según el alto de tu header */
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  /* Clase para mostrar el menú cuando se hace clic */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px;
+    width: 100%;
+  }
+}
 
 /* =========================================
    3. SECCIÓN INICIO (HERO)
