@@ -245,6 +245,14 @@
     &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los derechos reservados.
   </p>
 </footer>
+<div id="detailsOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+  <div style="background:white; padding:30px; border-radius:10px; max-width:600px; width:90%; position:relative;">
+    <span onclick="closeDetails()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:25px;">&times;</span>
+    <h2 id="modalTitle" style="color:var(--verde-rt-texto)"></h2>
+    <ul id="modalList" style="line-height:1.6; padding-left:20px;"></ul>
+  </div>
+</div>
+
 
     <!-- SDK oficial de Supabase (Librería corregida) -->
     <script src="https://jsdelivr.net"></script>
