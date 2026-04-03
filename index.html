@@ -245,13 +245,22 @@
     &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los derechos reservados.
   </p>
 </footer>
-<div id="detailsOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
-  <div style="background:white; padding:30px; border-radius:10px; max-width:600px; width:90%; position:relative;">
-    <span onclick="closeDetails()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:25px;">&times;</span>
-    <h2 id="modalTitle" style="color:var(--verde-rt-texto)"></h2>
-    <ul id="modalList" style="line-height:1.6; padding-left:20px;"></ul>
+<div id="detailsOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center; padding: 20px;">
+  <div style="background:white; padding:30px; border-radius:10px; max-width:600px; width:100%; max-height: 90vh; position:relative; display: flex; flex-direction: column;">
+    
+    <!-- Botón de cerrar fijo arriba -->
+    <span onclick="closeDetails()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:30px; font-weight:bold; color:#666; line-height:1;">&times;</span>
+    
+    <h2 id="modalTitle" style="color:var(--verde-rt-texto); margin-top: 0; padding-right: 20px; font-size: 1.5rem;"></h2>
+    
+    <!-- Contenedor con scroll si el texto es muy largo -->
+    <div style="overflow-y: auto; margin-top: 15px; padding-right: 10px;">
+      <ul id="modalList" style="line-height:1.6; padding-left:20px; margin-bottom: 0; color: #333;"></ul>
+    </div>
+
   </div>
 </div>
+
 
 
     <!-- SDK oficial de Supabase (Librería corregida) -->
