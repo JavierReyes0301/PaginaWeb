@@ -1,4 +1,21 @@
-// 1. LÓGICA DE LAS VENTANAS DE SERVICIOS (MODALES)
+// CONTROL DEL MENÚ MÓVIL (Al inicio para evitar errores)
+const menuBtn = document.getElementById("mobile-menu");
+const navMenu = document.getElementById("nav-menu");
+
+if (menuBtn && navMenu) {
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  // Cerrar el menú automáticamente al hacer clic en una opción
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
+}
+
+// LÓGICA DE LAS VENTANAS DE SERVICIOS (MODALES)
 const serviceData = {
   digital: {
     title: "Automatización y transformación digital",
@@ -112,18 +129,4 @@ contactForm.addEventListener("submit", async (e) => {
     btn.innerText = "ENVIAR MENSAJE";
     btn.disabled = false;
   }
-});
-
-const menuBtn = document.getElementById("mobile-menu");
-const navMenu = document.getElementById("nav-menu");
-
-menuBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
-
-// Cerrar el menú automáticamente al hacer clic en una opción
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-  });
 });

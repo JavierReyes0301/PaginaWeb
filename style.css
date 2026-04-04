@@ -165,7 +165,7 @@ section {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--verde-rt-texto);
+  background-color: #ffffff; /* CAMBIA ESTO A BLANCO */
   transition: 0.3s;
 }
 
@@ -196,6 +196,24 @@ section {
   .nav-links a {
     padding: 15px;
     width: 100%;
+  }
+}
+
+/* Esto es lo que falta para que el menú aparezca al hacer clic */
+@media (max-width: 768px) {
+  /* Forzamos que se muestre el menú cuando JS le pone la clase .active */
+  #nav-menu.active {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Asegura que los links sean visibles (Oscuros sobre el fondo blanco del menú móvil) */
+  #nav-menu.active a {
+    color: var(--verde-rt-texto) !important;
+    padding: 15px;
+    width: 100%;
+    display: block;
   }
 }
 
