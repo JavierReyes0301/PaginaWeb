@@ -91,10 +91,9 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// LÓGICA DE ENVÍO A MAKE.COM (WEBHOOK)
+// 1. PEGA TU URL AQUÍ
 const MAKE_WEBHOOK_URL =
-  "https://hook.us2.make.com/r4cmjp9lb7q4oyc8trtbfbwubvq9wfbm"; // Reemplaza esto con tu URL de Make
-
+  "https://hook.us2.make.com/r4cmjp9lb7q4oyc8trtbfbwubvq9wfbm";
 const contactForm = document.getElementById("supabaseContactForm");
 
 if (contactForm) {
@@ -102,41 +101,34 @@ if (contactForm) {
     e.preventDefault();
 
     const btn = document.getElementById("btnEnviar");
-    if (btn) {
-      btn.innerText = "Enviando...";
-      btn.disabled = true;
-    }
+    btn.innerText = "Enviando...";
+    btn.disabled = true;
 
-    // Recogemos los datos del formulario
     const formData = {
       nombre: document.getElementById("nombre").value,
       email: document.getElementById("email").value,
       mensaje: document.getElementById("mensaje").value,
-      fecha: new Date().toLocaleString(),
+      sitio: "RT Consultores",
     };
 
     try {
-      // Enviamos los datos a Make.com mediante un Fetch (nativo del navegador)
-      const response = await fetch(MAKE_WEBHOOK_URL, {
+      // Usamos 'no-cors' para evitar que el navegador bloquee el envío a Make
+      await fetch(MAKE_WEBHOOK_URL, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        alert("¡Mensaje enviado con éxito! Nos contactaremos pronto.");
-        contactForm.reset();
-      } else {
-        throw new Error("Error en el servidor de correos.");
-      }
+      // Con 'no-cors' no podemos leer la respuesta, así que asumimos éxito si no hay error de red
+      alert("¡Mensaje enviado con éxito! Nos contactaremos pronto.");
+      contactForm.reset();
     } catch (err) {
       alert("Hubo un problema al enviar el mensaje. Intenta más tarde.");
-      console.error("Error en Webhook:", err);
+      console.error("Error:", err);
     } finally {
-      if (btn) {
-        btn.innerText = "ENVIAR MENSAJE";
-        btn.disabled = false;
-      }
+      btn.innerText = "ENVIAR MENSAJE";
+      btn.disabled = false;
     }
   });
 }
