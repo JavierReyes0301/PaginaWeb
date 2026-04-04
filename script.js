@@ -91,41 +91,52 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// 2. LÓGICA DE ENVÍO A SUPABASE
-const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
-
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+// LÓGICA DE ENVÍO A MAKE.COM (WEBHOOK)
+const MAKE_WEBHOOK_URL =
+  "https://hook.us2.make.com/r4cmjp9lb7q4oyc8trtbfbwubvq9wfbm"; // Reemplaza esto con tu URL de Make
 
 const contactForm = document.getElementById("supabaseContactForm");
 
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const btn = document.getElementById("btnEnviar");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  if (btn) {
-    btn.innerText = "Enviando...";
-    btn.disabled = true; // Evita múltiples clics
-  }
+    const btn = document.getElementById("btnEnviar");
+    if (btn) {
+      btn.innerText = "Enviando...";
+      btn.disabled = true;
+    }
 
-  const { error } = await supabaseClient.from("contactos").insert([
-    {
+    // Recogemos los datos del formulario
+    const formData = {
       nombre: document.getElementById("nombre").value,
       email: document.getElementById("email").value,
       mensaje: document.getElementById("mensaje").value,
-    },
-  ]);
+      fecha: new Date().toLocaleString(),
+    };
 
-  if (error) {
-    alert("Error al enviar: " + error.message);
-  } else {
-    alert("¡Mensaje guardado con éxito! Nos contactaremos pronto.");
-    contactForm.reset();
-  }
+    try {
+      // Enviamos los datos a Make.com mediante un Fetch (nativo del navegador)
+      const response = await fetch(MAKE_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-  if (btn) {
-    btn.innerText = "ENVIAR MENSAJE";
-    btn.disabled = false;
-  }
-});
+      if (response.ok) {
+        alert("¡Mensaje enviado con éxito! Nos contactaremos pronto.");
+        contactForm.reset();
+      } else {
+        throw new Error("Error en el servidor de correos.");
+      }
+    } catch (err) {
+      alert("Hubo un problema al enviar el mensaje. Intenta más tarde.");
+      console.error("Error en Webhook:", err);
+    } finally {
+      if (btn) {
+        btn.innerText = "ENVIAR MENSAJE";
+        btn.disabled = false;
+      }
+    }
+  });
+}
