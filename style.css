@@ -88,7 +88,7 @@ section {
 }
 
 /* =========================================
-   2. NAVEGACIÓN (NAVBAR)
+   2. NAVEGACIÓN (NAVBAR) - DISEÑO PREMIUM
    ========================================= */
 .navbar-top {
   height: 70px;
@@ -139,20 +139,27 @@ section {
   font-weight: 400;
 }
 
+/* Enlaces para Escritorio */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a {
   text-decoration: none;
   color: var(--blanco);
   font-weight: 600;
-  margin-left: 20px;
+  margin-left: 25px;
   font-size: 0.85rem;
   text-transform: uppercase;
-  transition: var(--transition);
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
   color: var(--verde-rt-base);
 }
-/* Estilos base del botón (oculto en desktop) */
+
+/* Botón Hamburguesa */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -160,60 +167,82 @@ section {
   background: none;
   border: none;
   gap: 5px;
+  padding: 5px;
 }
 
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #ffffff; /* CAMBIA ESTO A BLANCO */
+  background-color: #ffffff;
   transition: 0.3s;
 }
 
-/* Tablet y Celular */
+/* =========================================
+   VERSION MÓVIL (NUEVA COMBINACIÓN)
+   ========================================= */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex; /* Mostrar botón */
-  }
-
-  .nav-links {
-    display: none; /* Ocultar menú normal */
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* Ajusta según el alto de tu header */
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 20px 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  /* Clase para mostrar el menú cuando se hace clic */
-  .nav-links.active {
     display: flex;
   }
 
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    width: 180px;
+
+    /* Fondo con degradado sutil usando tus colores */
+    background: linear-gradient(145deg, var(--verde-rt-oscuro), #1a2a2a);
+
+    padding: 15px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino elegante */
+    z-index: 1001;
+    overflow: hidden;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+    animation: fadeInDown 0.3s ease-out; /* Animación suave */
+  }
+
   .nav-links a {
-    padding: 15px;
+    color: rgba(255, 255, 255, 0.9) !important; /* Blanco suave */
+    padding: 14px 20px;
+    margin: 0;
     width: 100%;
+    display: block;
+    font-size: 0.85rem;
+    text-align: right;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  /* Efecto al pasar el cursor o tocar */
+  .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--verde-rt-base) !important;
+    padding-right: 25px; /* Pequeño movimiento a la izquierda */
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
   }
 }
 
-/* Esto es lo que falta para que el menú aparezca al hacer clic */
-@media (max-width: 768px) {
-  /* Forzamos que se muestre el menú cuando JS le pone la clase .active */
-  #nav-menu.active {
-    display: flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+/* Animación de entrada */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  /* Asegura que los links sean visibles (Oscuros sobre el fondo blanco del menú móvil) */
-  #nav-menu.active a {
-    color: var(--verde-rt-texto) !important;
-    padding: 15px;
-    width: 100%;
-    display: block;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
