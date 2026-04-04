@@ -94,7 +94,7 @@ window.addEventListener("click", function (event) {
 // 1. PEGA TU URL AQUÍ
 const MAKE_WEBHOOK_URL =
   "https://hook.us2.make.com/r4cmjp9lb7q4oyc8trtbfbwubvq9wfbm";
-const contactForm = document.getElementById("contactForm");
+const contactForm = document.getElementById("supabaseContactForm");
 
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
