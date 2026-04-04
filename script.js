@@ -96,7 +96,6 @@ const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
 
-// Usamos el nombre de la librería cargada arriba
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 const contactForm = document.getElementById("supabaseContactForm");
