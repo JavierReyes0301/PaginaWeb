@@ -46,8 +46,8 @@ const serviceData = {
   cont: {
     title: "Contabilidad y auditoría",
     items: [
-      "Contabilidad Fiscal",
-      "Contabilidad Gubernamental",
+      "Contabilidad Fiscal.",
+      "Contabilidad Gubernamental.",
       "Auditorías Interna y Externa.",
       "Auditoría de Matrícula Escolar.",
     ],
