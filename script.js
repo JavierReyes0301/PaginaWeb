@@ -54,13 +54,14 @@ const serviceData = {
   cursos: {
     title: "Cursos y capacitaciones",
     items: [
-      "Formulación y ejecución de programas presupuestarios.",
-      "Planeación y adjudicación de obra pública.",
-      "Ley General de Contabilidad Gubernamental.",
-      "Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público Estatal y Municipal.",
-      "Ley de Obra Pública y Servicios Relacionados con la Misma.",
+      "Transformación Digital: Gestión de Adjudicaciones y Padrón de Proveedores mediante Plataformas Integrales.",
+      "Formulación, Ejecución y Seguimiento de Programas Presupuestarios.",
+      "Gestión y Correcta Integración del Gasto Público: Del Registro Contable a la Comprobación.",      
+      "Estrategias para la Atención y Solventación de Observaciones de Entes Fiscalizadores.",      
       "Integración de procedimientos de la adquisición de bienes y servicios.",
-      "Proceso de entrega – recepción de la administración pública.",
+      "Integración Legal y Administrativa de Procedimientos para la Adquisición de Bienes y Servicios.",
+      "Ingeniería Administrativa: Actualización de Reglamentos Internos y Manuales de Procedimientos bajo Estándares de Calidad.",
+      "Blindaje Administrativo y Protocolos de Entrega-Recepción Institucional.",
     ],
   },
 };
