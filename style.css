@@ -560,34 +560,8 @@ section {
 }
 
 /* =========================================
-   8. CONTACTO, WHATSAPP Y FOOTER
+   8. FOOTER
    ========================================= */
-.quick-actions {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  z-index: 1500;
-}
-
-/* Eliminar el círculo del teléfono */
-.quick-actions .phone,
-.quick-actions a:not(.wa) {
-  display: none !important;
-}
-
-.action-btn.wa {
-  background: #25d366 !important;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-}
 
 .site-footer {
   background: var(--verde-rt-oscuro);
