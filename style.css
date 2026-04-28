@@ -575,3 +575,58 @@ section {
   font-weight: 800;
   text-transform: uppercase;
 }
+
+/* Contenedor principal */
+.ticker-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f8f9fa; /* Gris muy claro */
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.ticker-container {
+  display: flex;
+  width: 100%;
+}
+
+.ticker-wrapper {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite; /* Ajusta los segundos para más o menos velocidad */
+}
+
+/* Estilo de cada texto */
+.ticker-item {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #566573; /* El color de tu menú */
+  text-transform: uppercase;
+  padding: 0 50px; /* Espacio entre textos */
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* Separador pequeño entre textos */
+.ticker-item::after {
+  content: "•";
+  position: absolute;
+  right: 0;
+  color: var(--verde-rt-oscuro, #27ae60); /* Usa tu variable de verde */
+}
+
+/* Detener movimiento al pasar el mouse */
+.ticker-wrapper:hover {
+  animation-play-state: paused;
+}
+
+/* Animación del movimiento */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Se mueve exactamente la mitad */
+  }
+}

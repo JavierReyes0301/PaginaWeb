@@ -14,7 +14,7 @@ if (menuBtn && navMenu) {
 
 // LÓGICA DE LAS VENTANAS DE SERVICIOS (MODALES)
 const serviceData = {
-  digital: {
+  dig: {
     title: "Automatización y transformación digital",
     items: [
       "Plataforma Digital de Control y Seguimiento de los Procesos Administrativos (presupuestación, planeación, adjudicación, contratación y comprobación), para la Adquisición de Bienes y Contratación de Servicios.",
@@ -49,7 +49,7 @@ const serviceData = {
       "Auditoría de Matrícula Escolar.",
     ],
   },
-  cursos: {
+  curs: {
     title: "Cursos y capacitaciones",
     items: [
       "Transformación Digital: Gestión de Adjudicaciones y Padrón de Proveedores mediante Plataformas Integrales.",
@@ -137,4 +137,36 @@ if (contactForm) {
       btn.disabled = false;
     }
   });
+}
+async function gestionarContadorVisitas() {
+  // Verificamos si ya contó la visita en esta sesión de navegador
+  const yaVisito = sessionStorage.getItem("visita_registrada");
+
+  if (!yaVisito) {
+    // Llamamos a la función RPC de Supabase
+    const { error } = await supabase.rpc("incrementar_visitas");
+
+    if (error) {
+      console.error("Error al actualizar contador:", error);
+    } else {
+      // Marcamos que ya se contó para esta sesión
+      sessionStorage.setItem("visita_registrada", "true");
+      console.log("Visita global registrada exitosamente.");
+    }
+  }
+}
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", gestionarContadorVisitas);
+async function mostrarVisitas() {
+  const { data, error } = await supabase
+    .from("estadisticas")
+    .select("valor")
+    .eq("nombre_metrica", "visitas_totales")
+    .single();
+
+  if (data) {
+    document.getElementById("display-contador").innerText =
+      `Visitas: ${data.valor}`;
+  }
 }
