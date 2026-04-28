@@ -1,8 +1,3 @@
-const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co/rest/v1/";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
-const supabase = supabase.createClient(supabaseUrl, supabaseKey); // Aquí se define la variable
-
 // CONTROL DEL MENÚ MÓVIL (Al inicio para evitar errores)
 const menuBtn = document.getElementById("mobile-menu");
 const navMenu = document.getElementById("nav-menu");
@@ -143,13 +138,19 @@ if (contactForm) {
     }
   });
 }
+
+const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co/rest/v1/";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey); // Aquí se define la variable
+
 async function gestionarContadorVisitas() {
   // Verificamos si ya contó la visita en esta sesión de navegador
   const yaVisito = sessionStorage.getItem("visita_registrada");
 
   if (!yaVisito) {
     // Llamamos a la función RPC de Supabase
-    const { error } = await supabase.rpc("incrementar_visitas");
+    const { error } = await supabaseClient.rpc("incrementar_visitas");
 
     if (error) {
       console.error("Error al actualizar contador:", error);
