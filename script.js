@@ -139,40 +139,51 @@ if (contactForm) {
   });
 }
 
-const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co/rest/v1/";
+// 1. CORRECCIÓN: Quitamos "/rest/v1/" del final de la URL
+const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey); // Aquí se define la variable
+
+// Inicializamos el cliente
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 async function gestionarContadorVisitas() {
-  // Verificamos si ya contó la visita en esta sesión de navegador
   const yaVisito = sessionStorage.getItem("visita_registrada");
 
   if (!yaVisito) {
-    // Llamamos a la función RPC de Supabase
     const { error } = await supabaseClient.rpc("incrementar_visitas");
 
     if (error) {
       console.error("Error al actualizar contador:", error);
     } else {
-      // Marcamos que ya se contó para esta sesión
       sessionStorage.setItem("visita_registrada", "true");
       console.log("Visita global registrada exitosamente.");
+      // Después de incrementar, mostramos el valor actualizado
+      mostrarVisitas();
     }
+  } else {
+    // Si ya visitó en esta sesión, solo mostramos el número actual
+    mostrarVisitas();
   }
 }
 
-// Ejecutar al cargar la página
-document.addEventListener("DOMContentLoaded", gestionarContadorVisitas);
 async function mostrarVisitas() {
-  const { data, error } = await supabase
+  // CORRECCIÓN: Usamos 'supabaseClient' en lugar de 'supabase'
+  const { data, error } = await supabaseClient
     .from("estadisticas")
     .select("valor")
     .eq("nombre_metrica", "visitas_totales")
     .single();
 
   if (data) {
-    document.getElementById("display-contador").innerText =
-      `Visitas: ${data.valor}`;
+    const elementoContador = document.getElementById("display-contador");
+    if (elementoContador) {
+      elementoContador.innerText = `Visitas: ${data.valor}`;
+    }
+  } else if (error) {
+    console.error("Error al obtener visitas:", error);
   }
 }
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", gestionarContadorVisitas);
