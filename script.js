@@ -1,13 +1,10 @@
 // CONTROL DEL MENÚ MÓVIL (Al inicio para evitar errores)
 const menuBtn = document.getElementById("mobile-menu");
 const navMenu = document.getElementById("nav-menu");
-
 if (menuBtn && navMenu) {
   menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
-
-  // Cerrar el menú automáticamente al hacer clic en una opción
   document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
@@ -17,7 +14,7 @@ if (menuBtn && navMenu) {
 
 // LÓGICA DE LAS VENTANAS DE SERVICIOS (MODALES)
 const serviceData = {
-  digital: {
+  dig: {
     title: "Automatización y transformación digital",
     items: [
       "Plataforma Digital de Control y Seguimiento de los Procesos Administrativos (presupuestación, planeación, adjudicación, contratación y comprobación), para la Adquisición de Bienes y Contratación de Servicios.",
@@ -52,13 +49,13 @@ const serviceData = {
       "Auditoría de Matrícula Escolar.",
     ],
   },
-  cursos: {
+  curs: {
     title: "Cursos y capacitaciones",
     items: [
       "Transformación Digital: Gestión de Adjudicaciones y Padrón de Proveedores mediante Plataformas Integrales.",
       "Formulación, Ejecución y Seguimiento de Programas Presupuestarios.",
-      "Gestión y Correcta Integración del Gasto Público: Del Registro Contable a la Comprobación.",      
-      "Estrategias para la Atención y Solventación de Observaciones.",      
+      "Gestión y Correcta Integración del Gasto Público: Del Registro Contable a la Comprobación.",
+      "Estrategias para la Atención y Solventación de Observaciones.",
       "Integración de procedimientos de la adquisición de bienes y servicios.",
       "Integración Legal y Administrativa de Procedimientos para la Adquisición de Bienes y Servicios.",
       "Ingeniería Administrativa: Actualización de Reglamentos Internos y Manuales de Procedimientos bajo Estándares de Calidad.",
@@ -70,20 +67,26 @@ const serviceData = {
 function openDetails(key) {
   const data = serviceData[key];
   if (!data) return;
-
   document.getElementById("modalTitle").innerText = data.title;
   const list = document.getElementById("modalList");
   list.innerHTML = data.items.map((item) => `<li>${item}</li>`).join("");
-
   const overlay = document.getElementById("detailsOverlay");
   overlay.style.display = "flex";
   document.body.style.overflow = "hidden";
+
+  // AGREGADO: Actualiza la URL con el ID del servicio
+  if (window.location.hash !== "#" + key) {
+    history.pushState(null, null, "#" + key);
+  }
 }
 
 function closeDetails() {
   const overlay = document.getElementById("detailsOverlay");
   overlay.style.display = "none";
   document.body.style.overflow = "auto";
+
+  // AGREGADO: Limpia la URL al cerrar
+  history.pushState(null, null, window.location.pathname);
 }
 
 window.addEventListener("click", function (event) {
@@ -93,36 +96,37 @@ window.addEventListener("click", function (event) {
   }
 });
 
+// AGREGADO: Detectar URL al cargar para abrir automáticamente
+window.addEventListener("load", () => {
+  const hash = window.location.hash.replace("#", "");
+  if (hash && serviceData[hash]) {
+    setTimeout(() => openDetails(hash), 300);
+  }
+});
+
 // 1. PEGA TU URL AQUÍ
 const MAKE_WEBHOOK_URL =
   "https://hook.us2.make.com/r4cmjp9lb7q4oyc8trtbfbwubvq9wfbm";
 const contactForm = document.getElementById("contactForm");
-
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const btn = document.getElementById("btnEnviar");
     btn.innerText = "Enviando...";
     btn.disabled = true;
-
     const formData = {
       nombre: document.getElementById("nombre").value,
       email: document.getElementById("email").value,
       mensaje: document.getElementById("mensaje").value,
       sitio: "RT Consultores",
     };
-
     try {
-      // Usamos 'no-cors' para evitar que el navegador bloquee el envío a Make
       await fetch(MAKE_WEBHOOK_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
-      // Con 'no-cors' no podemos leer la respuesta, así que asumimos éxito si no hay error de red
       alert("¡Mensaje enviado con éxito! Nos contactaremos pronto.");
       contactForm.reset();
     } catch (err) {
@@ -134,3 +138,52 @@ if (contactForm) {
     }
   });
 }
+
+// 1. CORRECCIÓN: Quitamos "/rest/v1/" del final de la URL
+const supabaseUrl = "https://onckgyxtttcbddezmnsj.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uY2tneXh0dHRjYmRkZXptbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MTcwOTEsImV4cCI6MjA4OTI5MzA5MX0.iJj7GG-0zPnvUKTetOVp8y8iwSn0GzxiMRQKGVkt-DU";
+
+// Inicializamos el cliente
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function gestionarContadorVisitas() {
+  const yaVisito = sessionStorage.getItem("visita_registrada");
+
+  if (!yaVisito) {
+    const { error } = await supabaseClient.rpc("incrementar_visitas");
+
+    if (error) {
+      console.error("Error al actualizar contador:", error);
+    } else {
+      sessionStorage.setItem("visita_registrada", "true");
+      console.log("Visita global registrada exitosamente.");
+      // Después de incrementar, mostramos el valor actualizado
+      mostrarVisitas();
+    }
+  } else {
+    // Si ya visitó en esta sesión, solo mostramos el número actual
+    mostrarVisitas();
+  }
+}
+
+async function mostrarVisitas() {
+  // CORRECCIÓN: Usamos 'supabaseClient' en lugar de 'supabase'
+  const { data, error } = await supabaseClient
+    .from("estadisticas")
+    .select("valor")
+    .eq("nombre_metrica", "visitas_totales")
+    .single();
+
+  if (data) {
+    const elementoContador = document.getElementById("display-contador");
+    if (elementoContador) {
+      elementoContador.innerText = `Visitas: ${data.valor}`;
+    }
+  } else if (error) {
+    console.error("Error al obtener visitas:", error);
+  }
+}
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", gestionarContadorVisitas);
