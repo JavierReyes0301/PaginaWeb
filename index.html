@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Iconos para dirección y teléfono -->
     <link rel="stylesheet" href="https://cloudflare.com" />
+    <!-- Estilos AOS -->
+<link href="https://unpkg.com" rel="stylesheet">
+<!-- Iconos FontAwesome (Para los diferenciadores) -->
+<link rel="stylesheet" href="https://cloudflare.com">
   </head>
   <body>
 <header class="navbar-top">
@@ -182,6 +186,30 @@
           </div>
         </div>
       </section>
+      <section class="features-section" style="padding: 60px 0; background: #f9f9f9;" data-aos="fade-up">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center;">
+        
+        <div class="feature-item">
+            <i class="fas fa-user-shield" style="font-size: 3rem; color: var(--verde-rt-texto); margin-bottom: 15px;"></i>
+            <h3 style="color: var(--verde-rt-oscuro);">Confidencialidad</h3>
+            <p>Protección total de tu información sensible con los más altos estándares de seguridad.</p>
+        </div>
+
+        <div class="feature-item">
+            <i class="fas fa-microchip" style="font-size: 3rem; color: var(--verde-rt-texto); margin-bottom: 15px;"></i>
+            <h3 style="color: var(--verde-rt-oscuro);">Innovación Tecnológica</h3>
+            <p>Automatización de procesos para una gestión administrativa moderna y eficiente.</p>
+        </div>
+
+        <div class="feature-item">
+            <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--verde-rt-texto); margin-bottom: 15px;"></i>
+            <h3 style="color: var(--verde-rt-oscuro);">Experiencia Técnica</h3>
+            <p>Especialistas con trayectoria sólida en auditoría y consultoría gubernamental.</p>
+        </div>
+
+    </div>
+</section>
+
 <!-- SECCIÓN SERVICIOS (Sin cambios, está correcta) -->
 <section id="servicios" class="services-section">
   <div class="container">
@@ -194,23 +222,31 @@
     </div>
 
     <div class="grid-services">
-      <div class="service-card" onclick="openDetails('digital')" style="height: 180px; cursor: pointer;">
+    <!-- Automatización -->
+    <div class="service-card" onclick="openDetails('digital')" data-aos="zoom-in">
         <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
         <div class="card-overlay"><h3>Automatización y Transformación Digital</h3></div>
-      </div>
-      <div class="service-card" onclick="openDetails('gob')" style="height: 180px; cursor: pointer;">
+    </div>
+    
+    <!-- Gubernamental -->
+    <div class="service-card" onclick="openDetails('gob')" data-aos="zoom-in" data-aos-delay="100">
         <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
         <div class="card-overlay"><h3>Asesoría y Consultoría Gubernamental</h3></div>
-      </div>
-      <div class="service-card" onclick="openDetails('cont')" style="height: 180px; cursor: pointer;">
+    </div>
+    
+    <!-- Contabilidad -->
+    <div class="service-card" onclick="openDetails('cont')" data-aos="zoom-in" data-aos-delay="200">
         <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
         <div class="card-overlay"><h3>Contabilidad y Auditoría</h3></div>
-      </div>
-      <div class="service-card" onclick="openDetails('cursos')" style="height: 180px; cursor: pointer;">
+    </div>
+    
+    <!-- Cursos -->
+    <div class="service-card" onclick="openDetails('cursos')" data-aos="zoom-in" data-aos-delay="300">
         <div class="card-bg" style="background-image: url('https://unsplash.com')"></div>
         <div class="card-overlay"><h3>Cursos y Capacitaciones</h3></div>
-      </div>
     </div>
+</div>
+
   </div>
 </section>
 
@@ -253,6 +289,7 @@
     &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los derechos reservados.
   </p>
 </footer>
+
 <div id="detailsOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center; padding: 20px;">
   <div style="background:white; padding:30px; border-radius:10px; max-width:600px; width:100%; max-height: 90vh; position:relative; display: flex; flex-direction: column;">
     
@@ -272,6 +309,11 @@
 <script src="https://cloudflare.com"></script>
 
 <script src="script.js"></script>
+
+<script src="https://unpkg.com"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
 
   </body>
 </html>
