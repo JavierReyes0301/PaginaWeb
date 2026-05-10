@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RT Consultores Fiscales y Gubernamentales</title>
-    <link rel="icon" type="image/png" href="https://supabase.co" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://onckgyxtttcbddezmnsj.supabase.co/storage/v1/object/public/LOGO/Logotipo%20sin%20fondo.png"
+    />
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Librerías de iconos y animaciones (CORREGIDAS) -->
+    <!-- Iconos y Animaciones CORREGIDOS (URLs completas) -->
     <link rel="stylesheet" href="https://cloudflare.com" />
     <link href="https://unpkg.com" rel="stylesheet" />
   </head>
@@ -21,11 +24,14 @@
             <span class="brand-sub">Fiscales y Gubernamentales</span>
           </div>
         </a>
+
+        <!-- NUEVO: Botón Hamburguesa -->
         <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
+
         <nav class="nav-links" id="nav-menu">
           <a href="#inicio">INICIO</a>
           <a href="#nosotros">NOSOTROS</a>
@@ -38,15 +44,19 @@
     <main class="main-content">
       <!-- SECCIÓN INICIO -->
       <section id="inicio" class="hero-section" data-aos="fade-up">
-        <div class="hero-left" data-aos="fade-right" data-aos-delay="300">
+        <div class="hero-left">
           <div class="hero-content">
             <h1>SERVICIOS DE ASESORÍA, CONSULTORÍA</h1>
             <h2>Y AUDITORÍA FISCAL Y GUBERNAMENTAL</h2>
             <div class="hero-line"></div>
           </div>
         </div>
-        <div class="hero-right" data-aos="zoom-in" data-aos-delay="500">
-          <img src="https://supabase.co" alt="Logotipo RT" class="hero-logo" />
+        <div class="hero-right">
+          <img
+            src="https://onckgyxtttcbddezmnsj.supabase.co/storage/v1/object/public/LOGO/Logotipo%20sin%20fondo.png"
+            alt="Logotipo RT"
+            class="hero-logo"
+          />
         </div>
       </section>
 
@@ -95,12 +105,9 @@
               "
             />
           </div>
-
           <div
             class="about-intro"
             style="max-width: 95%; margin: 0 auto 50px; text-align: justify"
-            data-aos="fade-up"
-            data-aos-delay="200"
           >
             <p style="margin-bottom: 20px">
               En <strong>RT Consultores Fiscales y Gubernamentales</strong>,
@@ -111,10 +118,11 @@
             <p>
               Nos distinguimos por ser un equipo de profesionales con sólida
               formación académica que fusiona la experiencia técnica en
-              auditoría con el uso de herramientas digitales.
+              auditoría con el uso de herramientas digitales. Diseñamos
+              soluciones tecnológicas y estrategias administrativas que aseguran
+              la mejora continua y la transparencia.
             </p>
           </div>
-
           <div
             class="mission-vision-grid"
             style="margin-top: 10px; display: grid; gap: 20px"
@@ -123,7 +131,9 @@
             <div
               class="differentiation-box"
               style="
-                padding: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: none;
                 border-right: 5px solid var(--verde-rt-texto);
                 display: flex;
                 flex-direction: row-reverse;
@@ -137,7 +147,10 @@
                 <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Misión</h3>
                 <p style="margin: 5px 0 0 0">
                   Brindar soluciones integrales en consultoría fiscal,
-                  gubernamental y administrativa.
+                  gubernamental y administrativa, fusionando experiencia técnica
+                  con innovación digital para garantizar la transparencia, el
+                  cumplimiento legal y la rentabilidad mediante procesos
+                  estandarizados de excelencia.
                 </p>
               </div>
             </div>
@@ -145,7 +158,9 @@
             <div
               class="differentiation-box"
               style="
-                padding: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: none;
                 border-right: 5px solid var(--verde-rt-texto);
                 display: flex;
                 flex-direction: row-reverse;
@@ -160,7 +175,9 @@
                 <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Visión</h3>
                 <p style="margin: 5px 0 0 0">
                   Consolidarnos como el referente de innovación en servicios
-                  contables y gubernamentales.
+                  contables y gubernamentales, donde la tecnología y el talento
+                  humano se unen para ofrecer una experiencia de tranquilidad,
+                  confidencialidad y crecimiento estratégico constante.
                 </p>
               </div>
             </div>
@@ -217,7 +234,7 @@
           <div class="grid-services">
             <div
               class="service-card"
-              onclick="openDetails('dig')"
+              onclick="openDetails('digital')"
               style="height: 180px; cursor: pointer"
               data-aos="zoom-in"
             >
@@ -232,6 +249,7 @@
             <div
               class="service-card"
               onclick="openDetails('gob')"
+              style="height: 180px; cursor: pointer"
               data-aos="zoom-in"
               data-aos-delay="100"
             >
@@ -246,6 +264,7 @@
             <div
               class="service-card"
               onclick="openDetails('cont')"
+              style="height: 180px; cursor: pointer"
               data-aos="zoom-in"
               data-aos-delay="200"
             >
@@ -257,7 +276,8 @@
             </div>
             <div
               class="service-card"
-              onclick="openDetails('curs')"
+              onclick="openDetails('cursos')"
+              style="height: 180px; cursor: pointer"
               data-aos="zoom-in"
               data-aos-delay="300"
             >
@@ -272,7 +292,12 @@
       </section>
 
       <!-- SECCIÓN CONTACTO -->
-      <section id="contacto" class="contact-section" data-aos="fade-up">
+      <section
+        id="contacto"
+        class="contact-section"
+        data-aos="fade-up"
+        style="padding: 80px 10%; background: #ffffff; min-height: 500px"
+      >
         <div
           class="contact-grid"
           style="
@@ -281,10 +306,10 @@
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 10%;
           "
         >
-          <div class="form-side" data-aos="fade-right">
+          <!-- LADO IZQUIERDO: FORMULARIO -->
+          <div class="form-side">
             <h2
               style="
                 color: var(--verde-rt-texto);
@@ -300,8 +325,8 @@
                   class="fas fa-map-marker-alt"
                   style="color: var(--verde-rt-texto); margin-right: 10px"
                 ></i
-                ><strong>Dirección:</strong> Av. Centenario 15-3er Piso, Izúcar
-                de Matamoros, Pue.
+                ><strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
+                Aldama, Centro, 74400 Izúcar de Matamoros, Pue.
               </p>
               <p>
                 <i
@@ -310,13 +335,14 @@
                 ></i
                 ><strong>WhatsApp:</strong>
                 <a
-                  href="https://wa.me"
+                  href="https://wa.me/522431131260"
                   target="_blank"
                   style="text-decoration: none; color: inherit"
                   >(243) 113 12 60</a
                 >
               </p>
             </div>
+
             <form
               id="contactForm"
               style="display: flex; flex-direction: column; gap: 15px"
@@ -380,7 +406,9 @@
               </button>
             </form>
           </div>
-          <div class="map-side" style="width: 100%" data-aos="fade-left">
+
+          <!-- LADO DERECHO: MAPA -->
+          <div class="map-side" style="width: 100%">
             <div
               class="map-box"
               style="
@@ -389,10 +417,11 @@
                 border-radius: 10px;
                 overflow: hidden;
                 border: 1px solid #ddd;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
               "
             >
               <iframe
-                src="https://google.com"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.3099872028915!2d-98.46829702627714!3d18.605121966588985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d643b9d61da5eb7%3A0x1e034aa70c7d232!2sRT%20Consultores%20Fiscales%20y%20Gubernamentales!5e0!3m2!1ses-419!2smx!4v1774999587967!5m2!1ses-419!2smx"
                 width="100%"
                 height="100%"
                 style="border: 0"
@@ -402,27 +431,114 @@
             </div>
           </div>
         </div>
+        <!-- AQUÍ CERRAMOS EL contact-grid -->
       </section>
+      <!-- AQUÍ CERRAMOS LA SECCIÓN contacto -->
+
+      <!-- FOOTER FUERA DE LAS SECCIONES -->
+      <footer
+        class="site-footer"
+        style="
+          background: var(--verde-rt-oscuro, #1a3c34);
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          width: 100%;
+          clear: both;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 40px;
+        "
+      >
+        <p
+          style="
+            margin: 0;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+          "
+        >
+          &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los
+          derechos reservados.
+        </p>
+      </footer>
+
+      <div
+        id="detailsOverlay"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <div
+          style="
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+          "
+        >
+          <!-- Botón de cerrar fijo arriba -->
+          <span
+            onclick="closeDetails()"
+            style="
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              cursor: pointer;
+              font-size: 30px;
+              font-weight: bold;
+              color: #666;
+              line-height: 1;
+            "
+            >&times;</span
+          >
+
+          <h2
+            id="modalTitle"
+            style="
+              color: var(--verde-rt-texto);
+              margin-top: 0;
+              padding-right: 20px;
+              font-size: 1.5rem;
+            "
+          ></h2>
+
+          <!-- Contenedor con scroll si el texto es muy largo -->
+          <div style="overflow-y: auto; margin-top: 15px; padding-right: 10px">
+            <ul
+              id="modalList"
+              style="
+                line-height: 1.6;
+                padding-left: 20px;
+                margin-bottom: 0;
+                color: #333;
+              "
+            ></ul>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer
-      class="site-footer"
-      style="
-        background: var(--verde-rt-oscuro, #1a3c34);
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-      "
-    >
-      <p>
-        &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los
-        derechos reservados.
-      </p>
-    </footer>
-
-    <!-- SCRIPTS (ACTUALIZADOS) -->
+    <!-- SCRIPTS FINALES -->
     <script src="https://jsdelivr.net"></script>
     <script src="script.js"></script>
+    <!-- Librería AOS CORREGIDA -->
     <script src="https://unpkg.com"></script>
     <script>
       AOS.init({
