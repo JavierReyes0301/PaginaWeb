@@ -234,7 +234,7 @@
           <div class="grid-services">
             <div
               class="service-card"
-              onclick="openDetails('digital')"
+              onclick="openDetails('dig')"
               style="height: 180px; cursor: pointer"
               data-aos="zoom-in"
             >
@@ -276,7 +276,7 @@
             </div>
             <div
               class="service-card"
-              onclick="openDetails('cursos')"
+              onclick="openDetails('curs')"
               style="height: 180px; cursor: pointer"
               data-aos="zoom-in"
               data-aos-delay="300"
@@ -535,16 +535,24 @@
       </div>
     </main>
 
-    <!-- SCRIPTS FINALES -->
+    <!-- 1. Librería Supabase -->
     <script src="https://jsdelivr.net"></script>
+
+    <!-- 2. Tu script personalizado (el que me acabas de pasar) -->
     <script src="script.js"></script>
-    <!-- Librería AOS CORREGIDA -->
+
+    <!-- 3. Librería AOS (IMPORTANTE: La URL debe ser esta) -->
     <script src="https://unpkg.com"></script>
+
+    <!-- 4. Encendido de las animaciones -->
     <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 120,
+      // Esperamos a que todo cargue para iniciar
+      window.addEventListener("load", () => {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100,
+        });
       });
     </script>
   </body>
