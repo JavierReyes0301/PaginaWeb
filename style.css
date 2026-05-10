@@ -635,3 +635,62 @@ section {
     transform: translateX(-50%); /* Se mueve exactamente la mitad */
   }
 }
+
+/* Contenedor de botones flotantes */
+.floating-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+/* Estilo general de los botones */
+.floating-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Color WhatsApp */
+.whatsapp-float {
+  background-color: #25d366;
+}
+
+/* Color Facebook */
+.facebook-float {
+  background-color: #1877f2;
+}
+
+/* Efecto Hover (al pasar el mouse) */
+.floating-btn:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+/* Animación de entrada suave */
+.floating-container {
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
