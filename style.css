@@ -1,5 +1,5 @@
 /* ========================================= 
-   1. CONFIGURACIÓN TIPOGRÁFICA (RECUPERADA) 
+   1. VARIABLES Y CONFIGURACIÓN BASE 
    ========================================= */
 :root {
   --verde-rt-imagen: #d9e3e2;
@@ -12,7 +12,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Restauramos tu asterisco (*) con !important para que el diseño vuelva a la normalidad */
+/* Reset Universal y Tipografía Uniforme */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-/* ESCUDO PARA ICONOS: Esta es la clave para que no se rompan */
+/* ESCUDO PARA ICONOS: Protege FontAwesome del reset anterior */
 i,
 .fas,
 .fab,
@@ -29,7 +29,11 @@ i,
 .fa-map-marker-alt,
 .fa-whatsapp {
   font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
-  font-weight: 900 !important; /* Obligatorio para que los iconos se rellenen */
+  font-weight: 900 !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,58 +44,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-html {
-  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 section {
   scroll-margin-top: 80px;
 }
 
-/* =========================================
-   1. VARIABLES Y CONFIGURACIÓN BASE
-   ========================================= */
-:root {
-  --verde-rt-imagen: #d9e3e2;
-  --verde-rt-oscuro: #1e3a3a;
-  --verde-rt-base: #aab7b6;
-  --verde-rt-texto: #264a4a;
-  --gris-dark: #566573;
-  --gris-light: #d5d8dc;
-  --blanco: #ffffff;
-  --transition: all 0.3s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.4; /* Compacto */
-  color: #333;
-  overflow-x: hidden;
-  background-color: var(--blanco);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* NAVEGACIÓN EXACTA: Evita que el navbar tape el título al hacer clic */
-section {
-  scroll-margin-top: 80px;
-}
-
-/* =========================================
-   2. NAVEGACIÓN (NAVBAR) - DISEÑO PREMIUM
+/* ========================================= 
+   2. NAVEGACIÓN (NAVBAR) 
    ========================================= */
 .navbar-top {
   height: 70px;
@@ -135,19 +96,16 @@ section {
   text-transform: uppercase;
   line-height: 1;
 }
-
 .brand-sub {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.75rem;
   font-weight: 400;
 }
 
-/* Enlaces para Escritorio */
 .nav-links {
   display: flex;
   align-items: center;
 }
-
 .nav-links a {
   text-decoration: none;
   color: var(--blanco);
@@ -155,39 +113,28 @@ section {
   margin-left: 25px;
   font-size: 0.85rem;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
   color: var(--verde-rt-base);
 }
 
-/* Botón Hamburguesa */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  background: none;
-  border: none;
-  gap: 5px;
-  padding: 5px;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  transition: 0.3s;
-}
-
-/* =========================================
-   VERSION MÓVIL (NUEVA COMBINACIÓN)
-   ========================================= */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    background: none;
+    border: none;
   }
-
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -195,49 +142,26 @@ section {
     top: 65px;
     right: 20px;
     width: 180px;
-
-    /* Fondo con degradado sutil usando tus colores */
     background: linear-gradient(145deg, var(--verde-rt-oscuro), #1a2a2a);
-
     padding: 15px 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino elegante */
-    z-index: 1001;
-    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-
   .nav-links.active {
     display: flex !important;
-    animation: fadeInDown 0.3s ease-out; /* Animación suave */
+    animation: fadeInDown 0.3s ease-out;
   }
-
   .nav-links a {
-    color: rgba(255, 255, 255, 0.9) !important; /* Blanco suave */
+    color: #fff !important;
     padding: 14px 20px;
+    text-align: right;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin: 0;
     width: 100%;
-    display: block;
-    font-size: 0.85rem;
-    text-align: right;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-  }
-
-  /* Efecto al pasar el cursor o tocar */
-  .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--verde-rt-base) !important;
-    padding-right: 25px; /* Pequeño movimiento a la izquierda */
-  }
-
-  .nav-links a:last-child {
-    border-bottom: none;
   }
 }
 
-/* Animación de entrada */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -249,21 +173,18 @@ section {
   }
 }
 
-/* =========================================
-   3. SECCIÓN INICIO (HERO)
+/* ========================================= 
+   3. HERO SECTION 
    ========================================= */
 .main-content {
   margin-top: 70px;
   flex: 1;
 }
-
 .hero-section {
-  height: calc(100vh - 70px); /* Ajustado a pantalla */
+  height: calc(100vh - 70px);
   min-height: 400px;
   display: flex;
-  background-color: var(--blanco);
 }
-
 .hero-left {
   flex: 1.2;
   background: linear-gradient(
@@ -276,197 +197,83 @@ section {
   padding: 40px 60px;
   color: var(--verde-rt-texto);
 }
-
 .hero-content h1 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
 }
-
 .hero-line {
   width: 80px;
   height: 4px;
   background-color: var(--verde-rt-texto);
   margin: 20px 0;
 }
-
 .hero-right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
 }
-
 .hero-logo {
   max-width: 90%;
   max-height: 80%;
   object-fit: contain;
 }
 
-/* =========================================
-   4. ESTILOS COMPACTOS DE SECCIÓN (SIN AIRE)
+/* ========================================= 
+   4. SECCIONES Y CONTENIDO 
    ========================================= */
 .about-section,
 .services-section,
 .contact-section {
-  padding: 20px 5% !important; /* Compactación total */
+  padding: 40px 8% !important;
 }
 
 .about-section {
   background-color: #f9f9f9;
 }
-.services-section {
-  background: var(--verde-rt-imagen);
-}
-.contact-section {
-  background: var(--blanco);
-}
-
-/* Títulos homologados (Header del diseño de servicios) */
-.about-header,
-.services-section .container > div:first-child,
-.contact-section .container > div:first-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px !important;
-}
-
-/* =========================================
-   5. NOSOTROS (ABOUT) - ESTILO CONSOLIDADO
-   ========================================= */
-.about-section {
-  padding: 20px 5% !important;
-  background-color: #f9f9f9;
-}
-
 .about-intro {
-  /* Tamaño aumentado para mayor legibilidad */
-  font-size: 1.25rem !important;
+  font-size: 1.15rem !important;
   line-height: 1.6;
   color: #444;
-
-  /* Alineación y ancho */
   text-align: justify;
-  max-width: 95% !important;
-  margin: 0 auto 15px !important;
+  max-width: 95%;
+  margin: 0 auto 30px;
 }
 
-/* Mantiene el diseño de las cajas de Misión/Visión compacto */
 .differentiation-box {
   background: white;
-  padding: 15px 30px;
+  padding: 20px 30px;
   border-radius: 12px;
-  border-left: 5px solid var(--verde-rt-texto);
+  border-right: 5px solid var(--verde-rt-texto);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin: 10px auto;
+}
+
+/* Servicios 2x2 */
+.grid-services {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+  gap: 25px !important;
   max-width: 1100px;
-}
-
-.mission-vision-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
-
-/* =========================================
-   6. SERVICIOS (CENTRADO Y UNIFORME)
-   ========================================= */
-.grid-services {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important; /* 4 en una fila */
-  gap: 15px !important;
-  width: 100% !important;
-  max-width: 1200px;
-  margin: 45 auto !important;
-}
-
-.service-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  /* La transición debe ser lenta para que se vea el "vuelo" */
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out !important;
-  cursor: pointer;
-}
-
-/* EFECTO HOVER: Forzamos el movimiento hacia arriba */
-.service-card:hover {
-  transform: translateY(-10px) !important; /* El !important aquí es la clave */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
-}
-
-.card-bg {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.5s ease;
-}
-
-/* Efecto opcional para la imagen de fondo */
-.service-card:hover .card-bg {
-  transform: scale(1.1) !important;
-}
-
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(30, 58, 58, 0.9),
-    rgba(38, 74, 74, 0.3)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  color: white;
-  text-align: center;
-  z-index: 2;
-}
-
-/* =========================================
-   5. SECCIÓN SERVICIOS (DISEÑO 2x2 LARGO)
-   ========================================= */
-.services-section {
-  padding: 20px 5% !important;
-  background: var(--verde-rt-imagen);
-}
-
-/* Título homologado con Nosotros */
-.section-header-rt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px !important;
-}
-
-/* Cuadrícula de 2 columnas para que se vean largos */
-.grid-services {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important; /* 2 arriba y 2 abajo */
-  gap: 20px !important;
-  max-width: 1100px; /* Misma medida que Nosotros para simetría */
   margin: 0 auto !important;
 }
 
 .service-card {
   position: relative;
-  height: 180px !important; /* Altura compacta */
+  height: 200px !important;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out !important;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
 .card-bg {
@@ -476,7 +283,6 @@ section {
   background-position: center;
   transition: transform 0.6s ease;
 }
-
 .service-card:hover .card-bg {
   transform: scale(1.1);
 }
@@ -498,153 +304,77 @@ section {
   z-index: 2;
 }
 
-/* Títulos de servicios uniformes */
-.service-card h3 {
-  font-size: 1.2rem; /* Un poco más grande al ser cuadros más largos */
-  text-transform: uppercase;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* =========================================
-   7. MODAL (VENTANA EMERGENTE FLEXIBLE)
+/* ========================================= 
+   5. CONTACTO Y UNIFORMIDAD 
    ========================================= */
-.details-overlay {
-  display: none; /* Se activa con JS */
-  position: fixed;
-  inset: 0; /* Cubre toda la pantalla */
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Margen de seguridad para móviles */
-  backdrop-filter: blur(3px); /* Efecto elegante de fondo */
-}
+.contact-grid {
+  align-items: stretch !important;
+} /* Hace que formulario y mapa midan lo mismo */
 
-.details-content {
-  background: white;
-  width: 100%;
-  max-width: 700px; /* Ancho máximo en computadoras */
-  max-height: 90vh; /* No sobrepasa el 90% del alto de la pantalla */
-  padding: 30px;
-  border-radius: 12px;
-  position: relative;
-  overflow-y: auto; /* Permite scroll interno si el texto es muy largo */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-.close-details {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 2.2rem;
-  cursor: pointer;
-  color: var(--verde-rt-texto);
-  line-height: 1;
-}
-
-/* Estilo para la lista dentro del modal para que sea legible */
-#modalList {
-  list-style: none;
-  margin-top: 15px;
-}
-
-#modalList li {
-  margin-bottom: 12px;
-  padding-left: 25px;
-  position: relative;
-  text-align: justify;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-#modalList li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: var(--verde-rt-texto);
-  font-weight: bold;
-}
-
-/* =========================================
-   8. FOOTER
+/* ========================================= 
+   6. TICKER (TEXTO EN MOVIMIENTO) 
    ========================================= */
-
-.site-footer {
-  background: var(--verde-rt-oscuro);
-  color: white;
-  padding: 8px 0; /* Barra delgada */
-  text-align: center;
-}
-
-.site-footer p {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-/* Contenedor principal */
 .ticker-section {
   width: 100%;
   overflow: hidden;
-  background-color: #f8f9fa; /* Gris muy claro */
+  background-color: #f8f9fa;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 15px 0;
 }
-
-.ticker-container {
-  display: flex;
-  width: 100%;
-}
-
 .ticker-wrapper {
   display: flex;
   white-space: nowrap;
-  animation: ticker-scroll 30s linear infinite; /* Ajusta los segundos para más o menos velocidad */
+  animation: ticker-scroll 30s linear infinite;
 }
-
-/* Estilo de cada texto */
 .ticker-item {
   font-size: 1rem;
   font-weight: 700;
-  color: #566573; /* El color de tu menú */
+  color: #566573;
   text-transform: uppercase;
-  padding: 0 50px; /* Espacio entre textos */
+  padding: 0 50px;
   letter-spacing: 2px;
   position: relative;
 }
-
-/* Separador pequeño entre textos */
 .ticker-item::after {
   content: "•";
   position: absolute;
   right: 0;
-  color: var(--verde-rt-oscuro, #27ae60); /* Usa tu variable de verde */
+  color: var(--verde-rt-oscuro);
 }
-
-/* Detener movimiento al pasar el mouse */
 .ticker-wrapper:hover {
   animation-play-state: paused;
 }
 
-/* Animación del movimiento */
 @keyframes ticker-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Se mueve exactamente la mitad */
+    transform: translateX(-50%);
   }
 }
 
-/* =========================================
-   9. BOTONES FLOTANTES (WHATSAPP Y FACEBOOK)
+/* ========================================= 
+   7. FOOTER Y BOTONES FLOTANTES 
    ========================================= */
+.site-footer {
+  background: var(--verde-rt-oscuro);
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+.site-footer p {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .floating-container {
   position: fixed;
-  bottom: 50px;
-  right: 5px; /* Pegado a la barra de scroll */
+  bottom: 85px; /* Elevado para no encimarse al footer */
+  right: 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -658,37 +388,39 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white !important; /* Asegura que el icono sea blanco */
+  color: white !important;
   font-size: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   text-decoration: none;
-  opacity: 0.6; /* Transparencia inicial */
+  opacity: 0.6;
 }
 
 .whatsapp-float {
   background-color: #25d366;
 }
-
 .facebook-float {
   background-color: #1877f2;
 }
-
 .floating-btn:hover {
-  opacity: 1; /* Se vuelve sólido al pasar el mouse */
-  transform: scale(1.1) translateX(-5px); /* Se mueve un poco a la izquierda */
+  opacity: 1;
+  transform: scale(1.1) translateX(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Ajuste para móviles para que no estorben */
+/* Ajuste móvil */
 @media (max-width: 768px) {
+  .about-section,
+  .services-section,
+  .contact-section {
+    padding: 30px 5% !important;
+  }
   .floating-container {
+    bottom: 110px;
     right: 2px;
-    bottom: 20px;
   }
   .floating-btn {
     width: 40px;
     height: 40px;
-    font-size: 18px;
   }
 }
