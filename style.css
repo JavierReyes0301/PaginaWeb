@@ -387,16 +387,17 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  /* La transición debe ser lenta para que se vea el "vuelo" */
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out !important;
+  cursor: pointer;
 }
 
-/* Efecto Hover: Se eleva y brilla */
+/* EFECTO HOVER: Forzamos el movimiento hacia arriba */
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) !important; /* El !important aquí es la clave */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 .card-bg {
@@ -407,8 +408,9 @@ section {
   transition: transform 0.5s ease;
 }
 
+/* Efecto opcional para la imagen de fondo */
 .service-card:hover .card-bg {
-  transform: scale(1.1); /* Zoom suave al pasar el mouse */
+  transform: scale(1.1) !important;
 }
 
 .card-overlay {
