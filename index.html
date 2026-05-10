@@ -312,9 +312,18 @@
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
+            align-items: stretch;
           "
         >
-          <div class="form-side" data-aos="fade-right">
+          <div
+            class="form-side"
+            data-aos="fade-right"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
             <h2
               style="
                 color: var(--verde-rt-texto);
@@ -327,27 +336,23 @@
             </h2>
 
             <div style="margin-bottom: 25px; line-height: 1.6; color: #333">
-              <!-- Icono de Ubicación -->
               <p>
                 <i
-                  class="fas fa-location-dot"
+                  class="fas fa-map-marker-alt"
                   style="
                     color: var(--verde-rt-texto);
                     margin-right: 10px;
                     font-size: 1.2rem;
                   "
                 ></i>
-
                 <strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
                 Aldama, Centro, 74400 Izúcar de Matamoros, Pue.
               </p>
-              <!-- Logo de WhatsApp -->
               <p>
                 <i
                   class="fab fa-whatsapp"
                   style="color: #25d366; margin-right: 10px; font-size: 1.2rem"
                 ></i>
-
                 <strong>WhatsApp:</strong>
                 <a
                   href="https://wa.me/522431131260"
@@ -364,10 +369,14 @@
 
             <form
               id="contactForm"
-              style="display: flex; flex-direction: column; gap: 15px"
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                flex-grow: 1;
+              "
             >
               <div style="display: flex; gap: 15px; flex-wrap: wrap">
-                <!-- El atributo 'required' obliga a llenar el campo -->
                 <input
                   type="text"
                   id="nombre"
@@ -382,7 +391,6 @@
                   "
                   required
                 />
-
                 <input
                   type="email"
                   id="email"
@@ -409,11 +417,11 @@
                   padding: 12px;
                   border: 1px solid #ddd;
                   border-radius: 5px;
-                  resize: vertical;
+                  resize: none;
+                  flex-grow: 1;
                 "
                 required
               ></textarea>
-
               <button
                 type="submit"
                 id="btnEnviar"
@@ -434,12 +442,13 @@
             </form>
           </div>
 
-          <div class="map-side" style="width: 100%">
+          <div class="map-side" style="width: 100%; display: flex">
             <div
               class="map-box"
               style="
                 width: 100%;
-                height: 450px;
+                height: 100%;
+                min-height: 450px;
                 border-radius: 10px;
                 overflow: hidden;
                 border: 1px solid #ddd;
@@ -516,7 +525,6 @@
             flex-direction: column;
           "
         >
-          <!-- Botón de cerrar fijo arriba -->
           <span
             onclick="closeDetails()"
             style="
@@ -542,7 +550,6 @@
             "
           ></h2>
 
-          <!-- Contenedor con scroll si el texto es muy largo -->
           <div style="overflow-y: auto; margin-top: 15px; padding-right: 10px">
             <ul
               id="modalList"
@@ -558,18 +565,13 @@
       </div>
     </main>
 
-    <!-- 1. Librería Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- 2. Tu script personalizado (el que me acabas de pasar) -->
     <script src="script.js"></script>
 
-    <!-- 3. Librería AOS (IMPORTANTE: La URL debe ser esta) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <!-- 4. Encendido de las animaciones -->
     <script>
-      // Esperamos a que todo cargue para iniciar
       window.addEventListener("load", () => {
         AOS.init({
           duration: 1000,

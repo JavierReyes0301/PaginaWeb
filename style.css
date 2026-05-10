@@ -1,8 +1,7 @@
-/* =========================================
-   1. CONFIGURACIÓN TIPOGRÁFICA UNIFORME
+/* ========================================= 
+   1. CONFIGURACIÓN TIPOGRÁFICA (RECUPERADA) 
    ========================================= */
 :root {
-  /* Mantengo tus variables intactas */
   --verde-rt-imagen: #d9e3e2;
   --verde-rt-oscuro: #1e3a3a;
   --verde-rt-base: #aab7b6;
@@ -13,7 +12,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Aplicación global de la fuente Segoe UI para uniformidad total */
+/* Restauramos tu asterisco (*) con !important para que el diseño vuelva a la normalidad */
 * {
   margin: 0;
   padding: 0;
@@ -21,30 +20,34 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
+/* ESCUDO PARA ICONOS: Esta es la clave para que no se rompan */
+i,
+.fas,
+.fab,
+.fa-solid,
+.fa-brands,
+.fa-map-marker-alt,
+.fa-whatsapp {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900 !important; /* Obligatorio para que los iconos se rellenen */
+}
+
 body {
   line-height: 1.4;
   color: #333;
   overflow-x: hidden;
   background-color: var(--blanco);
-  -webkit-font-smoothing: antialiased; /* Mejora la nitidez de la letra */
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Asegura que los títulos y botones también hereden la misma fuente */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p,
-span,
-input,
-textarea,
-button,
-li {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 /* =========================================
