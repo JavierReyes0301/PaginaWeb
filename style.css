@@ -639,18 +639,16 @@ section {
 /* =========================================
    9. BOTONES FLOTANTES (WHATSAPP Y FACEBOOK)
    ========================================= */
-/* Contenedor de botones flotantes */
 .floating-container {
   position: fixed;
   bottom: 30px;
-  right: 5px;
+  right: 5px; /* Pegado a la barra de scroll */
   display: flex;
   flex-direction: column;
   gap: 10px;
   z-index: 1000;
 }
 
-/* Estilo general de los botones */
 .floating-btn {
   width: 45px;
   height: 45px;
@@ -658,47 +656,37 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: white !important; /* Asegura que el icono sea blanco */
   font-size: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   text-decoration: none;
+  opacity: 0.6; /* Transparencia inicial */
 }
 
-/* Color WhatsApp */
 .whatsapp-float {
   background-color: #25d366;
 }
 
-/* Color Facebook */
 .facebook-float {
   background-color: #1877f2;
 }
 
-/* Efecto Hover (al pasar el mouse) */
 .floating-btn:hover {
-  transform: scale(1.1) translateY(-5px);
+  opacity: 1; /* Se vuelve sólido al pasar el mouse */
+  transform: scale(1.1) translateX(-5px); /* Se mueve un poco a la izquierda */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Animación de entrada suave */
-.floating-container {
-  animation: slideInRight 1s ease-out;
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
+/* Ajuste para móviles para que no estorben */
 @media (max-width: 768px) {
   .floating-container {
-    right: 10px;
+    right: 2px;
     bottom: 20px;
+  }
+  .floating-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
