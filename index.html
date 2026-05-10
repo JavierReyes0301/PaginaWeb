@@ -13,7 +13,7 @@
     <!-- Iconos y Animaciones CORREGIDOS (URLs completas) -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
@@ -314,8 +314,7 @@
             margin: 0 auto;
           "
         >
-          <!-- LADO IZQUIERDO: FORMULARIO -->
-          <div class="form-side">
+          <div class="form-side" data-aos="fade-right">
             <h2
               style="
                 color: var(--verde-rt-texto);
@@ -325,25 +324,26 @@
             >
               Contactar a un experto
             </h2>
+
             <div style="margin-bottom: 25px; line-height: 1.6; color: #333">
+              <!-- Icono de Ubicación -->
               <p>
-                <i
-                  class="fas fa-map-marker-alt"
-                  style="color: var(--verde-rt-texto); margin-right: 10px"
-                ></i
-                ><strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
+                <i class="fa-solid fa-location-dot"></i>
+                <strong>Dirección:</strong> Av. Centenario 15-3er Piso, Villas
                 Aldama, Centro, 74400 Izúcar de Matamoros, Pue.
               </p>
+              <!-- Logo de WhatsApp -->
               <p>
-                <i
-                  class="fab fa-whatsapp"
-                  style="color: #2ecc71; margin-right: 10px"
-                ></i
-                ><strong>WhatsApp:</strong>
+                <i class="fa-brands fa-whatsapp"></i>
+                <strong>WhatsApp:</strong>
                 <a
                   href="https://wa.me/522431131260"
                   target="_blank"
-                  style="text-decoration: none; color: inherit"
+                  style="
+                    text-decoration: none;
+                    color: inherit;
+                    font-weight: bold;
+                  "
                   >(243) 113 12 60</a
                 >
               </p>
@@ -354,10 +354,12 @@
               style="display: flex; flex-direction: column; gap: 15px"
             >
               <div style="display: flex; gap: 15px; flex-wrap: wrap">
+                <!-- El atributo 'required' obliga a llenar el campo -->
                 <input
                   type="text"
                   id="nombre"
-                  placeholder="Tu nombre"
+                  name="nombre"
+                  placeholder="Tu nombre completo"
                   style="
                     flex: 1;
                     min-width: 250px;
@@ -367,9 +369,11 @@
                   "
                   required
                 />
+
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Correo electrónico"
                   style="
                     flex: 1;
@@ -381,8 +385,10 @@
                   required
                 />
               </div>
+
               <textarea
                 id="mensaje"
+                name="mensaje"
                 placeholder="¿En qué podemos ayudarte?"
                 rows="4"
                 style="
@@ -394,6 +400,7 @@
                 "
                 required
               ></textarea>
+
               <button
                 type="submit"
                 id="btnEnviar"
@@ -406,6 +413,7 @@
                   border-radius: 5px;
                   font-weight: bold;
                   width: 100%;
+                  transition: background 0.3s;
                 "
               >
                 ENVIAR MENSAJE
@@ -413,7 +421,6 @@
             </form>
           </div>
 
-          <!-- LADO DERECHO: MAPA -->
           <div class="map-side" style="width: 100%">
             <div
               class="map-box"
@@ -437,11 +444,8 @@
             </div>
           </div>
         </div>
-        <!-- AQUÍ CERRAMOS EL contact-grid -->
       </section>
-      <!-- AQUÍ CERRAMOS LA SECCIÓN contacto -->
 
-      <!-- FOOTER FUERA DE LAS SECCIONES -->
       <footer
         class="site-footer"
         style="
