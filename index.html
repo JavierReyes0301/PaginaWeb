@@ -10,13 +10,13 @@
       href="https://onckgyxtttcbddezmnsj.supabase.co/storage/v1/object/public/LOGO/Logotipo%20sin%20fondo.png"
     />
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Estilos AOS (Animaciones) CORREGIDO -->
+    <!-- Iconos para dirección y teléfono -->
+    <link rel="stylesheet" href="https://cloudflare.com" />
+    <!-- Estilos AOS -->
     <link href="https://unpkg.com" rel="stylesheet" />
-    <!-- Iconos FontAwesome CORREGIDO -->
+    <!-- Iconos FontAwesome (Para los diferenciadores) -->
     <link rel="stylesheet" href="https://cloudflare.com" />
   </head>
-
   <body>
     <header class="navbar-top">
       <div class="nav-container">
@@ -26,11 +26,14 @@
             <span class="brand-sub">Fiscales y Gubernamentales</span>
           </div>
         </a>
+
+        <!-- NUEVO: Botón Hamburguesa -->
         <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
+
         <nav class="nav-links" id="nav-menu">
           <a href="#inicio">INICIO</a>
           <a href="#nosotros">NOSOTROS</a>
@@ -68,7 +71,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              margin-bottom: 30px;
+              margin-bottom: 10px;
             "
           >
             <hr
@@ -107,7 +110,7 @@
 
           <div
             class="about-intro"
-            style="max-width: 900px; margin: 0 auto 40px; text-align: justify"
+            style="max-width: 95%; margin: 0 auto 50px; text-align: justify"
           >
             <p style="margin-bottom: 20px">
               En <strong>RT Consultores Fiscales y Gubernamentales</strong>,
@@ -115,144 +118,77 @@
               eficiencia administrativa y financiera tanto en el sector público
               como en el privado.
             </p>
+
             <p>
-              Nos distinguimos por un enfoque basado en tres pilares
-              fundamentales:
+              Nos distinguimos por ser un equipo de profesionales con sólida
+              formación académica que fusiona la experiencia técnica en
+              auditoría con el uso de herramientas digitales. Diseñamos
+              soluciones tecnológicas y estrategias administrativas que aseguran
+              la mejora continua y la transparencia.
             </p>
           </div>
 
-          <!-- LISTA DE PILARES CON ANIMACIÓN -->
-          <ul
-            style="
-              list-style: none;
-              padding: 0;
-              max-width: 800px;
-              margin: 0 auto 50px;
-            "
-          >
-            <li
-              style="
-                margin-bottom: 15px;
-                display: flex;
-                align-items: flex-start;
-              "
-              data-aos="fade-left"
-              data-aos-delay="100"
-            >
-              <i
-                class="fas fa-check-circle"
-                style="
-                  color: var(--verde-rt-texto);
-                  margin-right: 15px;
-                  margin-top: 5px;
-                  font-size: 1.2rem;
-                "
-              ></i>
-              <span
-                ><strong>Confidencialidad Absoluta:</strong> Manejo ético y
-                seguro de su información sensible.</span
-              >
-            </li>
-            <li
-              style="
-                margin-bottom: 15px;
-                display: flex;
-                align-items: flex-start;
-              "
-              data-aos="fade-left"
-              data-aos-delay="200"
-            >
-              <i
-                class="fas fa-check-circle"
-                style="
-                  color: var(--verde-rt-texto);
-                  margin-right: 15px;
-                  margin-top: 5px;
-                  font-size: 1.2rem;
-                "
-              ></i>
-              <span
-                ><strong>Innovación Tecnológica:</strong> Herramientas digitales
-                para optimizar su gestión.</span
-              >
-            </li>
-            <li
-              style="
-                margin-bottom: 15px;
-                display: flex;
-                align-items: flex-start;
-              "
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
-              <i
-                class="fas fa-check-circle"
-                style="
-                  color: var(--verde-rt-texto);
-                  margin-right: 15px;
-                  margin-top: 5px;
-                  font-size: 1.2rem;
-                "
-              ></i>
-              <span
-                ><strong>Experiencia Técnica:</strong> Especialistas con sólida
-                trayectoria en auditoría.</span
-              >
-            </li>
-          </ul>
-
           <div
             class="mission-vision-grid"
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-              gap: 30px;
-            "
+            style="margin-top: 10px; display: grid; gap: 20px"
           >
             <!-- MISIÓN -->
             <div
               class="differentiation-box"
               style="
-                padding: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: none;
                 border-right: 5px solid var(--verde-rt-texto);
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 20px;
                 text-align: justify;
               "
-              data-aos="zoom-in"
             >
-              <h3 style="margin: 0 0 10px 0; color: var(--verde-rt-oscuro)">
-                Misión
-              </h3>
-              <p style="margin: 0">
-                Brindar soluciones integrales en consultoría fiscal y
-                administrativa, fusionando experiencia técnica con innovación
-                digital para garantizar transparencia y rentabilidad.
-              </p>
+              <div class="diff-text">
+                <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Misión</h3>
+                <p style="margin: 5px 0 0 0">
+                  Brindar soluciones integrales en consultoría fiscal,
+                  gubernamental y administrativa, fusionando experiencia técnica
+                  con innovación digital para garantizar la transparencia, el
+                  cumplimiento legal y la rentabilidad mediante procesos
+                  estandarizados de excelencia.
+                </p>
+              </div>
             </div>
+
             <!-- VISIÓN -->
             <div
               class="differentiation-box"
               style="
-                padding: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: none;
                 border-right: 5px solid var(--verde-rt-texto);
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 20px;
                 text-align: justify;
               "
-              data-aos="zoom-in"
-              data-aos-delay="200"
             >
-              <h3 style="margin: 0 0 10px 0; color: var(--verde-rt-oscuro)">
-                Visión
-              </h3>
-              <p style="margin: 0">
-                Consolidarnos como el referente de innovación en servicios
-                contables, donde la tecnología y el talento humano ofrecen
-                tranquilidad y crecimiento estratégico.
-              </p>
+              <div class="diff-text">
+                <h3 style="margin: 0; color: var(--verde-rt-oscuro)">Visión</h3>
+                <p style="margin: 5px 0 0 0">
+                  Consolidarnos como el referente de innovación en servicios
+                  contables y gubernamentales, donde la tecnología y el talento
+                  humano se unen para ofrecer una experiencia de tranquilidad,
+                  confidencialidad y crecimiento estratégico constante.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECCIÓN SERVICIOS -->
+      <!-- SECCIÓN SERVICIOS (Sin cambios, está correcta) -->
       <section id="servicios" class="services-section" data-aos="fade-up">
         <div class="container">
           <div
@@ -261,7 +197,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              margin-bottom: 30px;
+              margin-bottom: 10px;
             "
           >
             <hr
@@ -300,11 +236,9 @@
           </div>
 
           <div class="grid-services">
-            <!-- Automatización -->
             <div
               class="service-card"
               onclick="openDetails('dig')"
-              data-aos="zoom-in"
               style="height: 180px; cursor: pointer"
             >
               <div
@@ -315,13 +249,13 @@
                 <h3>Automatización y Transformación Digital</h3>
               </div>
             </div>
+
             <!-- Gubernamental -->
             <div
               class="service-card"
               onclick="openDetails('gob')"
               data-aos="zoom-in"
               data-aos-delay="100"
-              style="height: 180px; cursor: pointer"
             >
               <div
                 class="card-bg"
@@ -331,13 +265,13 @@
                 <h3>Asesoría y Consultoría Gubernamental</h3>
               </div>
             </div>
+
             <!-- Contabilidad -->
             <div
               class="service-card"
               onclick="openDetails('cont')"
               data-aos="zoom-in"
               data-aos-delay="200"
-              style="height: 180px; cursor: pointer"
             >
               <div
                 class="card-bg"
@@ -345,12 +279,9 @@
               ></div>
               <div class="card-overlay"><h3>Contabilidad y Auditoría</h3></div>
             </div>
-            <!-- Cursos -->
             <div
               class="service-card"
               onclick="openDetails('curs')"
-              data-aos="zoom-in"
-              data-aos-delay="300"
               style="height: 180px; cursor: pointer"
             >
               <div
@@ -363,65 +294,7 @@
         </div>
       </section>
 
-      <!-- SECCIÓN REDES SOCIALES (NUEVA) -->
-      <section
-        class="social-connect"
-        data-aos="fade-up"
-        style="
-          padding: 60px 10%;
-          background: var(--verde-rt-oscuro);
-          color: white;
-          text-align: center;
-        "
-      >
-        <h2 style="margin-bottom: 10px; font-size: 2rem">
-          Conéctate con nosotros
-        </h2>
-        <p style="margin-bottom: 30px; opacity: 0.9">
-          Actualizaciones fiscales y gubernamentales a un clic.
-        </p>
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-          "
-        >
-          <a
-            href="#"
-            target="_blank"
-            class="social-btn facebook"
-            style="
-              padding: 12px 25px;
-              border-radius: 30px;
-              color: white;
-              text-decoration: none;
-              border: 2px solid rgba(255, 255, 255, 0.2);
-              font-weight: bold;
-            "
-          >
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            class="social-btn linkedin"
-            style="
-              padding: 12px 25px;
-              border-radius: 30px;
-              color: white;
-              text-decoration: none;
-              border: 2px solid rgba(255, 255, 255, 0.2);
-              font-weight: bold;
-            "
-          >
-            <i class="fab fa-linkedin-in"></i> LinkedIn
-          </a>
-        </div>
-      </section>
-
-      <!-- SECCIÓN CONTACTO -->
+      <!-- SECCIÓN CONTACTO CORREGIDA -->
       <section
         id="contacto"
         class="contact-section"
@@ -439,7 +312,7 @@
           "
         >
           <!-- LADO IZQUIERDO: FORMULARIO -->
-          <div class="form-side" data-aos="fade-right">
+          <div class="form-side">
             <h2
               style="
                 color: var(--verde-rt-texto);
@@ -538,7 +411,7 @@
           </div>
 
           <!-- LADO DERECHO: MAPA -->
-          <div class="map-side" style="width: 100%" data-aos="fade-left">
+          <div class="map-side" style="width: 100%">
             <div
               class="map-box"
               style="
@@ -561,110 +434,120 @@
             </div>
           </div>
         </div>
+        <!-- AQUÍ CERRAMOS EL contact-grid -->
       </section>
-    </main>
+      <!-- AQUÍ CERRAMOS LA SECCIÓN contacto -->
 
-    <footer
-      class="site-footer"
-      style="
-        background: var(--verde-rt-oscuro, #1a3c34);
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        width: 100%;
-      "
-    >
-      <p
+      <!-- FOOTER FUERA DE LAS SECCIONES -->
+      <footer
+        class="site-footer"
         style="
-          margin: 0;
-          font-size: 0.8rem;
-          letter-spacing: 1px;
-          font-weight: 500;
-        "
-      >
-        &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los
-        derechos reservados.
-      </p>
-    </footer>
-
-    <!-- MODAL DE SERVICIOS -->
-    <div
-      id="detailsOverlay"
-      style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-      "
-    >
-      <div
-        style="
-          background: white;
-          padding: 30px;
-          border-radius: 10px;
-          max-width: 600px;
+          background: var(--verde-rt-oscuro, #1a3c34);
+          color: white;
+          text-align: center;
+          padding: 10px 0;
           width: 100%;
-          max-height: 90vh;
-          position: relative;
+          clear: both;
           display: flex;
-          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 40px;
         "
       >
-        <span
-          onclick="closeDetails()"
+        <p
           style="
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            cursor: pointer;
-            font-size: 30px;
-            font-weight: bold;
-            color: #666;
-            line-height: 1;
+            margin: 0;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 500;
           "
-          >&times;</span
         >
-        <h2
-          id="modalTitle"
+          &copy; 2026 RT Consultores Fiscales y Gubernamentales | Todos los
+          derechos reservados.
+        </p>
+      </footer>
+
+      <div
+        id="detailsOverlay"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <div
           style="
-            color: var(--verde-rt-texto);
-            margin-top: 0;
-            padding-right: 20px;
-            font-size: 1.5rem;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
           "
-        ></h2>
-        <div style="overflow-y: auto; margin-top: 15px; padding-right: 10px">
-          <ul
-            id="modalList"
+        >
+          <!-- Botón de cerrar fijo arriba -->
+          <span
+            onclick="closeDetails()"
             style="
-              line-height: 1.6;
-              padding-left: 20px;
-              margin-bottom: 0;
-              color: #333;
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              cursor: pointer;
+              font-size: 30px;
+              font-weight: bold;
+              color: #666;
+              line-height: 1;
             "
-          ></ul>
+            >&times;</span
+          >
+
+          <h2
+            id="modalTitle"
+            style="
+              color: var(--verde-rt-texto);
+              margin-top: 0;
+              padding-right: 20px;
+              font-size: 1.5rem;
+            "
+          ></h2>
+
+          <!-- Contenedor con scroll si el texto es muy largo -->
+          <div style="overflow-y: auto; margin-top: 15px; padding-right: 10px">
+            <ul
+              id="modalList"
+              style="
+                line-height: 1.6;
+                padding-left: 20px;
+                margin-bottom: 0;
+                color: #333;
+              "
+            ></ul>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- SCRIPTS FINALES -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script src="script.js"></script>
 
-    <!-- AOS SCRIPT CORREGIDO -->
     <script src="https://unpkg.com"></script>
     <script>
       AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 120,
+        duration: 1000, // Cuánto dura la animación (1 segundo)
+        once: true, // ¿Animar solo la primera vez que se ve? Sí.
+        offset: 120, // Distancia para que se active al bajar
       });
     </script>
   </body>
